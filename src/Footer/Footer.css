@@ -1,0 +1,13 @@
+
+.footer {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.footer a {
+	margin-left: 10px;
+}
+
+.ant-layout-header {
+	padding: 4px 50px;
+}

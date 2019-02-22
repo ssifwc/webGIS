@@ -1,0 +1,32 @@
+
+.legend {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	background-color: white;
+	z-index: 3;
+	bottom: 150px;
+	right: 20px;
+	width: 450px;
+	max-height: 550px;
+	overflow-y: scroll;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.legend-item {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.legend-item > p{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.legend-colour-box {
+	width: 20px;
+	height: 20px;
+}
