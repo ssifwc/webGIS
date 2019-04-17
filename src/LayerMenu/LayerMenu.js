@@ -32,6 +32,11 @@ class LayerMenu extends Component {
             tileURL = "https://api.mapbox.com/styles/v1/mapbox/emerald-v8/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmFybmFieSIsImEiOiJXbFJyQWtFIn0.j7VjwkfjLd1O79VvtlzNfw";
             attribution = '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://swww.openstreetmap.org/copyright">OpenStreetMap</a>'
             break; 
+        default:
+            tileURL = "https://api.mapbox.com/styles/v1/mapbox/satellite-v8/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmFybmFieSIsImEiOiJXbFJyQWtFIn0.j7VjwkfjLd1O79VvtlzNfw";
+            attribution = '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            break; 
+
     }
 
     this.setState({ selectedBasemap: e.key })
@@ -43,6 +48,9 @@ class LayerMenu extends Component {
     var location = {}
 
     switch (e.key) {
+      default:
+          location = {label: 'Ferncreek Outfall', uuid: '9104c8d5-131e-4012-99cb-93b582757f59', radius: 15}
+          break;
       case 'location1':
           location = {label: 'Ferncreek Outfall', uuid: '9104c8d5-131e-4012-99cb-93b582757f59', radius: 15}
           break;
@@ -144,6 +152,9 @@ class LayerMenu extends Component {
           break;
       case 'location34':
           location = {label: 'MCWS Mansell road creek Footbridge', uuid: '4c102572-9776-430a-ba16-f398a73aa94f', radius: 75}
+          break;
+      case 'location35':
+          location = {label: 'FHWS Ruby Alton', uuid: '01738f04-0cd2-4231-be6b-5a1e1ebcac5f', radius: 75}
           break;
     }
 
@@ -273,6 +284,27 @@ class LayerMenu extends Component {
                     </span>
                   }
                 >
+                  <SubMenu title={<span><Icon type="area-chart"/><span>North</span></span>}>  
+                    <Menu.Item key={'location30'}>Possibly ocean outlet For North View wetlands</Menu.Item>
+                    <Menu.Item key={'location31'}>McFadden Creek</Menu.Item>
+                    <Menu.Item key={'location32'}>DCWS Epron 341 creek</Menu.Item>
+                    <Menu.Item key={'location33'}>B Cr culvert at Rob. Rd</Menu.Item>
+                    <Menu.Item key={'location34'}>MCWS Mansell road creek Footbridge</Menu.Item>
+                  </SubMenu>
+                  <SubMenu title={<span><Icon type="area-chart"/><span>Central</span></span>}>
+                    <Menu.Item key={'location2'}>Weston Creek Outfall</Menu.Item>
+                    <Menu.Item key={'location19'}>MYCkWS Monty Creek outfall</Menu.Item>
+                    <Menu.Item key={'location20'}>9117WS Menhinick corner creek</Menu.Item>
+                    <Menu.Item key={'location21'}>CCWS Cusheon (Jarads Grove) Creek 1</Menu.Item>
+                    <Menu.Item key={'location22'}>CCWS Blackburn Road Culvert 5</Menu.Item>
+                    <Menu.Item key={'location23'}>CCWS Blackburn Lake area Culvert 1 Hitchcock  1 2 junction</Menu.Item>
+                    <Menu.Item key={'location24'}>Dukes Road #427, creek N side arm</Menu.Item>
+                    <Menu.Item key={'location25'}>DCWS Spur Culvert</Menu.Item>
+                    <Menu.Item key={'location26'}>CH/Rdg Junction Culvert</Menu.Item>
+                    <Menu.Item key={'location27'}>1983WS Mt Park Dr Creek junction</Menu.Item>
+                    <Menu.Item key={'location28'}>DCWS St Mary’s Lake damp area -I</Menu.Item>
+                    <Menu.Item key={'location29'}>1996WS ?? Creek streambed</Menu.Item>
+                  </SubMenu>
                   <SubMenu title={<span><Icon type="area-chart"/><span>South</span></span>}>
                     <Menu.Item key={'location3'}>XwWs site 2 W totem culvert</Menu.Item>
                     <Menu.Item key={'location4'}>XwWs site 4 E totem big culvet left</Menu.Item>
@@ -290,31 +322,10 @@ class LayerMenu extends Component {
                     <Menu.Item key={'location16'}>Scouting 2112WS Waterfall1 Mt Drive</Menu.Item>
                     <Menu.Item key={'location17'}>FHWS Stowell Ck</Menu.Item>
                     <Menu.Item key={'location18'}>FHWS Weston Ck</Menu.Item>
-                  </SubMenu>
-                  <SubMenu title={<span><Icon type="area-chart"/><span>Central</span></span>}>
-                    <Menu.Item key={'location2'}>Weston Creek Outfall</Menu.Item>
-                    <Menu.Item key={'location19'}>MYCkWS Monty Creek outfall</Menu.Item>
-                    <Menu.Item key={'location20'}>9117WS Menhinick corner creek</Menu.Item>
-                    <Menu.Item key={'location21'}>CCWS Cusheon (Jarads Grove) Creek 1</Menu.Item>
-                    <Menu.Item key={'location22'}>CCWS Blackburn Road Culvert 5</Menu.Item>
-                    <Menu.Item key={'location23'}>CCWS Blackburn Lake area Culvert 1 Hitchcock  1 2 junction</Menu.Item>
-                    <Menu.Item key={'location24'}>Dukes Road #427, creek N side arm</Menu.Item>
-                    <Menu.Item key={'location25'}>DCWS Spur Culvert</Menu.Item>
-                    <Menu.Item key={'location26'}>CH/Rdg Junction Culvert</Menu.Item>
-                    <Menu.Item key={'location27'}>1983WS Mt Park Dr Creek junction</Menu.Item>
-                    <Menu.Item key={'location28'}>DCWS St Mary’s Lake damp area -I</Menu.Item>
-                    <Menu.Item key={'location29'}>1996WS ?? Creek streambed</Menu.Item>
-                  </SubMenu>
-                  <SubMenu title={<span><Icon type="area-chart"/><span>North</span></span>}>  
-                    <Menu.Item key={'location30'}>Possibly ocean outlet For North View wetlands</Menu.Item>
-                    <Menu.Item key={'location31'}>McFadden Creek</Menu.Item>
-                    <Menu.Item key={'location32'}>DCWS Epron 341 creek</Menu.Item>
-                    <Menu.Item key={'location33'}>B Cr culvert at Rob. Rd</Menu.Item>
-                    <Menu.Item key={'location34'}>MCWS Mansell road creek Footbridge</Menu.Item>
+                    <Menu.Item key={'location35'}>FHWS Ruby Alton</Menu.Item>
                   </SubMenu>
 
                 </SubMenu>
-
             </Menu>
           </div>
       )

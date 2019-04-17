@@ -16,7 +16,7 @@ class App extends Component {
 		super(props)
 		this.state = { 
 			center: [48.820541, -123.439710],
-			zoom: 10,
+			zoom: 12,
 			collapsed: false,
 			showPopup: true,
 			drawerVisible: false,
@@ -27,8 +27,10 @@ class App extends Component {
 			attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
 			points: [],
 			polygons: [],
+			lines: [],
 			pointStore: [],
 			polygonStore: [],
+			lineStore: [],
 			legendItems: [],
 			layers: [
 				{'label': 'epicollect', 'display': 'Field Observations', 'onToggle': this.handleSelectEpicollect, 'colour': '#F5A623', 'menu': 'ssifwcFeatures'},
@@ -36,6 +38,10 @@ class App extends Component {
 				//{'label': 'trails', 'display': 'Trails', 'onToggle': null, 'colour': 'red', 'menu': 'ssifwcFeatures'},
 				{'label': 'wells', 'display': 'Water wells (FLNR)', 'onToggle': this.handleSelectWells, 'colour': 'blue', 'menu': 'waterEarth'},
 				{'label': 'springs', 'display': 'Licensed springs (FLNR)', 'onToggle': this.handleSelectSprings, 'colour': 'blue', 'menu': 'waterEarth'},
+				{'label': 'faults', 'display': 'faults (Local/Regional)', 'onToggle': this.handleSelectFaults, 'menu': 'waterEarth', 'colours': {
+					'Fault': 'blue',
+					'Thrust': 'red'
+				}},
 				{'label': 'watersheds', 'display': 'Watersheds (CRD)', 'colours': {
 					'Arnold Creek': 'blue',
 					'McFadden Creek': 'red',
@@ -66,11 +72,11 @@ class App extends Component {
 					'Monty Creek': 'purple',
 					'Larlow Creek': 'green'
 				}, 'onToggle': this.handleSelectWatersheds, 'hasLegend': true, 'filterKey': 'name', 'menu': 'waterEarth'},
-				{'label': 'aquifers', 'display': 'Aquifers (Golder report)', 'colours': {
+				{'label': 'aquifers', 'display': 'Aquifers (Hodge, 1995)', 'colours': {
 					'Sand and Gravel': 'brown',
 					'Bedrock': 'black'
 				}, 'filterKey': 'materials', 'onToggle': this.handleSelectAquifers, 'hasLegend': true, 'menu': 'waterEarth'},
-				{'label': 'greenwood', 'display': 'Geological map (Greenwood)', 'colours': {
+				{'label': 'greenwood', 'display': 'Geology (Greenwood, 2009)', 'colours': {
 					'Comox Formation (conglomerate)': '#6baf6a',
 					'Cedar District Formation (sandstone & mudstone)': '#a7ff69',
 					'Northumberland Formation (mudstone & sandstone)': '#b3f6af',
@@ -96,13 +102,14 @@ class App extends Component {
 					'DeCourcy Formation (sandstone)': '#b1f6af',
 					'Haslam Formation (shale & mudstone)': '#66de63'
 				}, 'filterKey': 'description', 'onToggle': this.handleSelectGreenwood, 'hasLegend': true, 'menu': 'waterEarth'},
-				//{'label': 'landOwner', 'display': 'Land Owner Status', 'onToggle': this.handleSelectGreenwood, 'colour': '#B8E986', 'menu': 'admin'},
+				//{'label': 'parcels', 'display': 'Land Owner Status', 'onToggle': this.handleSelectParcels, 'colour': '#B8E986', 'menu': 'admin'},
 			],
 			toggled: {
 				'epicollect': true,
 				'watersheds': false,
 				'aquifers': false,
 				'greenwood': false,
+				'faults': false,
 			}, 
 		}
 	}
@@ -145,6 +152,18 @@ class App extends Component {
 		}
 	}
 
+	handleSelectParcels = () => {
+		const layer = this.getLayerByName('parcels')
+
+		this.handleToggleLayer(layer);
+
+		if (this.state.toggled[layer.labe]) {
+			this.handleRemovePolygons(layer);
+		} else {
+			this.handleLoadPolygons(layer);
+		}
+	}
+
 	handleSelectSprings = () => {
 		const layer = this.getLayerByName('springs')
 
@@ -181,6 +200,18 @@ class App extends Component {
 		}		
 	}
 
+	handleSelectFaults = () => {
+		const layer = this.getLayerByName('faults')
+
+		this.handleToggleLayer(layer);
+
+		if (this.state.toggled[layer.label]) {
+			this.handleRemoveLines(layer)
+		} else {
+			this.handleLoadLines(layer)
+		}
+	}
+
 	getLayerByName = (layerName) => {
 		return this.state.layers.find(function(layer) {
 		  return layer.label === layerName
@@ -209,7 +240,6 @@ class App extends Component {
 				});
 			this.setState({points: this.state.points.concat(points)});
 			});
-
 		}
 	}
 
@@ -244,6 +274,26 @@ class App extends Component {
 					}
 				});
 				this.setState({polygons: this.state.polygons.concat(polygons)});
+			});
+		}
+	}
+
+	handleLoadLines = (layer) => {
+
+		const savedLines = this.state.lineStore.filter(function(line) {
+			return line.id === layer.label;
+		});
+
+		if (savedLines.length > 0) {
+			this.setState({lines: this.state.lines.concat(savedLines)});
+		} else {
+			this.loadData(layer.label).then((lines) => {
+				lines.map(line => {
+					line.id = layer.label;
+					line.label = layer.label;
+					line.colour = layer.colours[line.name];
+				});
+				this.setState({lines: this.state.lines.concat(lines)});
 			});
 		}
 	}
@@ -286,6 +336,23 @@ class App extends Component {
 			return point.label !== layer.label;
 		});
 		this.setState({points: keepPoints});
+	}
+
+	handleRemoveLines = (layer) => {
+
+		const lineStore = this.state.lineStore.filter(function(line) {
+			return line.label !== layer.label;
+		});
+
+		const removeLines = this.state.lines.filter(function(line) {
+			return line.label === layer.label;
+		});
+		this.setState({lineStore: removeLines.concat(lineStore)})
+
+		const keepLines = this.state.lines.filter(function(line) {
+			return line.label !== layer.label;
+		});
+		this.setState({lines: keepLines});
 	}
 
 	loadData(resource) {
@@ -342,7 +409,7 @@ class App extends Component {
 
 	 	for (var point in this.state.points) {
 
-	 		if (this.state.points[point].id == location.uuid) {
+	 		if (this.state.points[point].id === location.uuid) {
 	 			this.setState({
 	 				center: this.state.points[point].point,
 	 				zoom: 14
@@ -418,13 +485,13 @@ class App extends Component {
 		        	theme="dark" 
 		        >
 		          	<div className="logo">
-		          		<img src="logo-circle.png"/>
+		          		<img src="logo-circle.png" alt={''}/>
 		          	</div>
-		          	<span style={{'display': 'flex', "align-items": "center", 'flex': '1', 'margin-left': '100px'}}>
+		          	<span style={{'display': 'flex', "alignItems": "center", 'flex': '1', 'marginLeft': '100px'}}>
 			           	<h1 className="title">SSIFWC</h1>
-			           	<h3 className="title" style={{'margin-left': '50px'}}>Salt Spring Island Freshwater Catalogue</h3>
+			           	<h3 className="title" style={{'marginLeft': '50px'}}>Salt Spring Island Freshwater Catalogue</h3>
 		           	</span>
-		          	<Button type="primary" shape="circle" icon="info" size={25} onClick={this.showModal} />
+		          	<Button type="primary" shape="circle" icon="info" size={'large'} onClick={this.showModal} />
 		        </Header>
 
 		        <Content style={{ margin: '10px', display: 'flex' }}>
@@ -434,11 +501,12 @@ class App extends Component {
 		              	className="map"
 		              	polygons={this.state.polygons} 
 		              	points={this.state.points} 
+		              	lines={this.state.lines}
 		              	onMarkerSelect={this.showDrawer}
 		              	tileURL= {this.state.tileURL}
 	      				attribution= {this.state.attribution}
 		            />
-		            <img className='north-arrow' src={require('./assets/north-arrow.png')} />
+		            <img className='north-arrow' src={require('./assets/north-arrow.png')} alt={''} />
 		           	<Legend legendItems={this.state.legendItems}/>
 		        </Content>
 		        <PageFooter/>

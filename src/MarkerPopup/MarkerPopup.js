@@ -56,21 +56,6 @@ class MarkerPopup extends Component {
     });
   }
 
-  getPhotoUrl = (photoId) => {
-
-    return fetch("https://lrwu47ypal.execute-api.us-east-1.amazonaws.com/dev/image", {
-      method: 'post',
-      body: JSON.stringify({
-        id: photoId
-      })
-    }).then(function(response) {
-      return response.json();
-    }).then(function(json) {
-      return json
-    })
-
-  }
-
   componentWillReceiveProps(props) {
 
     if (props.visible === true) {
@@ -79,10 +64,12 @@ class MarkerPopup extends Component {
         var photos = []
         for (var photo in observations[0].photos) {
 
-          if (photo) {
+          var photoId = observations[0].photos[photo]
+
+          if (photoId) {
             photos.push(
             {
-              url: 'https://s3.amazonaws.com/ssifwc-images/' + photo
+              url: 'https://s3.amazonaws.com/ssifwc-images/' + photoId
             }
             )
           }
@@ -149,7 +136,7 @@ class MarkerPopup extends Component {
 
               <Card>
                   {items.map((item, index) => {
-                    return <Skeleton active loading={this.state.loading}>
+                    return <Skeleton active loading={this.state.loading} key={index}>
                               <span>
                                 <p className="card-title"><strong>{item.label}</strong></p>
                                 {
@@ -207,7 +194,7 @@ class MarkerPopup extends Component {
                     <Card
                       hoverable
                       style={{ width: 240 }}
-                      cover={<img alt="example" src={photo.url} />}
+                      cover={<img alt={photo.id} src={photo.url} />}
                     >
                       <Meta
                         title={photo.label}

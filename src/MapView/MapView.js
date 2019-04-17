@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Map, TileLayer, ScaleControl, Polygon, Marker, Popup } from 'react-leaflet';
+import { Map, TileLayer, ScaleControl, Polygon, Marker, Popup, Polyline } from 'react-leaflet';
 import L from 'leaflet';
 
 
@@ -31,6 +31,7 @@ class MapView extends Component {
       zoom: props.zoom,
       polygons: [],
       points: [],
+      lines: [],
       tileURL: props.tileURL,
       attribution: props.attribution
     };
@@ -48,6 +49,9 @@ class MapView extends Component {
     }
     if (props.points !== this.state.points) {
       this.setState({ points: props.points})
+    }
+    if (props.lines !== this.state.lines) {
+      this.setState({ lines: props.lines})
     }
 
     this.setState({
@@ -91,6 +95,17 @@ class MapView extends Component {
                       onMarkerSelect={ this.props.onMarkerSelect }
                       />
           )
+        }
+        {
+          this.state.lines.map((line, index) => {
+              return <Polyline
+                        key={index}
+                        positions={line.coordinates}
+                        color={line.colour}
+                        opacity={0.6}
+                     >
+                     </Polyline>
+          })
         }
         <TileLayer
           attribution={this.state.attribution}
