@@ -38,9 +38,10 @@ class App extends Component {
 				//{'label': 'trails', 'display': 'Trails', 'onToggle': null, 'colour': 'red', 'menu': 'ssifwcFeatures'},
 				{'label': 'wells', 'display': 'Water wells (FLNR)', 'onToggle': this.handleSelectWells, 'colour': 'blue', 'menu': 'waterEarth'},
 				{'label': 'springs', 'display': 'Licensed springs (FLNR)', 'onToggle': this.handleSelectSprings, 'colour': 'blue', 'menu': 'waterEarth'},
-				{'label': 'faults', 'display': 'faults (Local/Regional)', 'onToggle': this.handleSelectFaults, 'menu': 'waterEarth', 'colours': {
+				{'label': 'faults', 'display': 'Faults (Local/Regional)', 'onToggle': this.handleSelectFaults, 'menu': 'waterEarth', 'colours': {
 					'Fault': 'blue',
-					'Thrust': 'red'
+					'Thrust': 'red',
+					'Greenwood': 'black'
 				}},
 				{'label': 'watersheds', 'display': 'Watersheds (CRD)', 'colours': {
 					'Arnold Creek': 'blue',
@@ -102,7 +103,7 @@ class App extends Component {
 					'DeCourcy Formation (sandstone)': '#b1f6af',
 					'Haslam Formation (shale & mudstone)': '#66de63'
 				}, 'filterKey': 'description', 'onToggle': this.handleSelectGreenwood, 'hasLegend': true, 'menu': 'waterEarth'},
-				//{'label': 'parcels', 'display': 'Land Owner Status', 'onToggle': this.handleSelectParcels, 'colour': '#B8E986', 'menu': 'admin'},
+				{'label': 'parcels', 'display': 'Land Owner Status', 'onToggle': this.handleSelectParcels, 'colour': '#B8E986', 'menu': 'admin'},
 			],
 			toggled: {
 				'epicollect': true,
@@ -157,7 +158,7 @@ class App extends Component {
 
 		this.handleToggleLayer(layer);
 
-		if (this.state.toggled[layer.labe]) {
+		if (this.state.toggled[layer.label]) {
 			this.handleRemovePolygons(layer);
 		} else {
 			this.handleLoadPolygons(layer);
@@ -356,7 +357,7 @@ class App extends Component {
 	}
 
 	loadData(resource) {
-		return fetch("https://lrwu47ypal.execute-api.us-east-1.amazonaws.com/dev/" + resource).then(function(response) {
+		return fetch("https://m0mgf48bn4.execute-api.us-east-1.amazonaws.com/dev/" + resource).then(function(response) {
 			return response.json();
 		}).then(function(json) {
 			return json;

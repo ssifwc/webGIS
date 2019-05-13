@@ -293,8 +293,8 @@ class LayerMenu extends Component {
                   </SubMenu>
                   <SubMenu title={<span><Icon type="area-chart"/><span>Central</span></span>}>
                     <Menu.Item key={'location2'}>Weston Creek Outfall</Menu.Item>
-                    <Menu.Item key={'location19'}>MYCkWS Monty Creek outfall</Menu.Item>
-                    <Menu.Item key={'location20'}>9117WS Menhinick corner creek</Menu.Item>
+                    <Menu.Item key={'location19'}>MYCKWS Monty Creek dam waterfall</Menu.Item>
+                    <Menu.Item key={'location20'}>9117WS to-be-named-X creek Bridgman 240 culvert</Menu.Item>
                     <Menu.Item key={'location21'}>CCWS Cusheon (Jarads Grove) Creek 1</Menu.Item>
                     <Menu.Item key={'location22'}>CCWS Blackburn Road Culvert 5</Menu.Item>
                     <Menu.Item key={'location23'}>CCWS Blackburn Lake area Culvert 1 Hitchcock  1 2 junction</Menu.Item>

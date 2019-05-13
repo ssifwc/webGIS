@@ -93,7 +93,7 @@ class GraphDrawer extends Component {
           <LineChart width={450} height={250} data={this.state.conductivity}>
               <Line type="monotone" dataKey="value" stroke="#4285F4" />
               <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
-              <YAxis label={{ value: "Conductivity", angle: -90, position: 'insideBottomLeft' }}/>
+              <YAxis label={{ value: "Conductivity (µS/cm)", angle: -90, position: 'insideBottomLeft' }}/>
               <CartesianGrid strokeDasharray="3 3"/>
               <Tooltip/>
           </LineChart>
@@ -101,7 +101,7 @@ class GraphDrawer extends Component {
           <LineChart width={450} height={250} data={this.state.ph}>
               <Line type="monotone" dataKey="value" stroke="#0F9D58" />
               <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
-              <YAxis label={{ value: "pH", angle: -90, position: 'insideBottomLeft' }}/>
+              <YAxis label={{ value: "pH", angle: -90, position: 'insideBottomLeft' }} domain={[6, 9]}/>
               <CartesianGrid strokeDasharray="3 3"/>
               <Tooltip/>
           </LineChart>
@@ -118,7 +118,7 @@ class GraphDrawer extends Component {
               <CartesianGrid strokeDasharray="3 3"/>
               <Tooltip/>
               <XAxis dataKey="date" tickFormatter={this.formatXAxis}/>
-              <YAxis label={{ value: "Precipitation (mm)", angle: -90, position: 'insideBottomLeft' }}/>
+              <YAxis label={{ value: "Precipitation (mm) GISS SSI", angle: -90, position: 'insideBottomLeft' }}/>
               <Line dataKey="value" fill="#8884d8" />
           </LineChart>
         </Drawer>
