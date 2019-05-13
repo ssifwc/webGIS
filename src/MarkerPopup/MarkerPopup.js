@@ -69,7 +69,7 @@ class MarkerPopup extends Component {
           if (photoId) {
             photos.push(
             {
-              url: 'https://s3.amazonaws.com/ssifwc-images/' + photoId
+              url: 'https://s3.amazonaws.com/ssifwc-image-bucket/' + photoId
             }
             )
           }
