@@ -22,22 +22,12 @@ class GraphDrawer extends Component {
 
   getData = (uuid, radius) => {
 
-    return fetch("https://lrwu47ypal.execute-api.us-east-1.amazonaws.com/dev/metrics", {
+    return fetch("https://m0mgf48bn4.execute-api.us-east-1.amazonaws.com/dev/metrics", {
       method: 'post',
       body: JSON.stringify({
         uuid: uuid,
         radius: radius
       })
-    }).then(function(response) {
-      return response.json();
-    }).then(function(json) {
-      return json
-    });
-  }
-
-  getPrecipitation() {
-    return fetch("https://lrwu47ypal.execute-api.us-east-1.amazonaws.com/dev/precipitation", {
-      method: 'get'
     }).then(function(response) {
       return response.json();
     }).then(function(json) {
@@ -58,13 +48,8 @@ class GraphDrawer extends Component {
           conductivity: metrics.conductivity,
           ph: metrics.ph,
           flow_rate: metrics.flow_rate,
+          precipitation: metrics.precipitation
         });
-      })
-
-      this.getPrecipitation().then((precipitation) => {
-        this.setState({
-          precipitation: precipitation
-        })
       })
     }
   }
@@ -117,7 +102,7 @@ class GraphDrawer extends Component {
           <LineChart width={450} height={250} data={this.state.precipitation}>
               <CartesianGrid strokeDasharray="3 3"/>
               <Tooltip/>
-              <XAxis dataKey="date" tickFormatter={this.formatXAxis}/>
+              <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
               <YAxis label={{ value: "Precipitation (mm) GISS SSI", angle: -90, position: 'insideBottomLeft' }}/>
               <Line dataKey="value" fill="#8884d8" />
           </LineChart>
