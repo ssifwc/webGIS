@@ -479,6 +479,7 @@ class App extends Component {
 				Stewardship Groups. For further information on the SSIFWC project, or to get involved, please drop an email to 
 				<a href="mailto:ssifwc@gmail.com?Subject=Hello" target="_top"> ssifwc@gmail.com</a>.
 			  </p>
+			  <p>This website was designed and built by Barney Gordon</p>
 	        </Modal>
 
 	        <Layout>
