@@ -43,7 +43,7 @@ class MarkerPopup extends Component {
       loading: true
     })
 
-    return fetch("https://lrwu47ypal.execute-api.us-east-1.amazonaws.com/dev/epicollect", {
+    return fetch("https://m0mgf48bn4.execute-api.us-east-1.amazonaws.com/dev/epicollect", {
       method: 'post',
       body: JSON.stringify({
         uuids: [point.id],
