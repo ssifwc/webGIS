@@ -14,6 +14,9 @@ class GraphDrawer extends Component {
       conductivity: null,
       ph: null,
       flow_rate: null,
+      hardness: null,
+      dissolved_oxygen: null,
+      alkalinity: null,
       visible: props.visible,
       location: props.location,
       precipitation: null,
@@ -47,7 +50,10 @@ class GraphDrawer extends Component {
           temperature: metrics.temperature,
           conductivity: metrics.conductivity,
           ph: metrics.ph,
-          flow_rate: metrics.flow_rate,
+          alkalinity: metrics.alkalinity,
+          dissolved_oxygen: metrics.flow_rate,
+          hardness: metrics.hardness,
+          flow_rate: metrics.dissolved_oxygen,
           precipitation: metrics.precipitation
         });
       })
@@ -87,6 +93,30 @@ class GraphDrawer extends Component {
               <Line type="monotone" dataKey="value" stroke="#0F9D58" />
               <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
               <YAxis label={{ value: "pH", angle: -90, position: 'insideBottomLeft' }} domain={[6, 9]}/>
+              <CartesianGrid strokeDasharray="3 3"/>
+              <Tooltip/>
+          </LineChart>
+
+          <LineChart width={450} height={250} data={this.state.dissolved_oxygen}>
+              <Line type="monotone" dataKey="value" stroke="#0F9D58" />
+              <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
+              <YAxis label={{ value: "Dissolved Oxygen (mg/L)", angle: -90, position: 'insideBottomLeft' }} domain={[0, 300]}/>
+              <CartesianGrid strokeDasharray="3 3"/>
+              <Tooltip/>
+          </LineChart>
+
+          <LineChart width={450} height={250} data={this.state.alkalinity}>
+              <Line type="monotone" dataKey="value" stroke="#32a852" />
+              <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
+              <YAxis label={{ value: "Alkalinity (ppm)", angle: -90, position: 'insideBottomLeft' }} domain={[0, 300]}/>
+              <CartesianGrid strokeDasharray="3 3"/>
+              <Tooltip/>
+          </LineChart>
+
+          <LineChart width={450} height={250} data={this.state.hardness}>
+              <Line type="monotone" dataKey="value" stroke="#32a852" />
+              <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
+              <YAxis label={{ value: "Hardness (ppm)", angle: -90, position: 'insideBottomLeft' }} domain={[0, 180]}/>
               <CartesianGrid strokeDasharray="3 3"/>
               <Tooltip/>
           </LineChart>

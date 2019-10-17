@@ -26,9 +26,7 @@ class MarkerPopup extends Component {
       waterBodyType: '',
       likelyPermenance: '',
       rateOfFlowQualitative: '',
-      flowRateQuantity1: '',
-      flowRateQuantity2: '',
-      flowRateQuantity3: '',
+      flowRateQuantity: '',
       pH: '',
       temperature: '',
       conductivity: '',
@@ -90,9 +88,7 @@ class MarkerPopup extends Component {
           waterBodyType: observations[0].water_body_type,
           likelyPermenance: observations[0].likely_permenance,
           rateOfFlowQualitative: observations[0].rate_of_flow_qualitative,
-          flowRateQuantity1: observations[0].flow_rate_quantity_1,
-          flowRateQuantity2: observations[0].flow_rate_quantity_2,
-          flowRateQuantity3: observations[0].flow_rate_quantity_3,
+          flowRateQuantity: observations[0].flow_rate_average,
           pH: observations[0].ph,
           temperature: observations[0].temperature,
           conductivity: observations[0].conductivity,
@@ -174,18 +170,9 @@ class MarkerPopup extends Component {
                 </span>
 
                 <span>
-                  <p className="card-title"><strong>Flow Rate Quantity 1</strong></p>
-                  <p>{ this.state.flowRateQuantity1 }</p>
+                  <p className="card-title"><strong>Flow Rate Quantity</strong></p>
+                  <p>{ this.state.flowRateQuantity }</p>
                 </span>
-                <span>
-                  <p className="card-title"><strong>Flow Rate Quantity 2</strong></p>
-                  <p>{ this.state.flowRateQuantity2 }</p>
-                </span>
-                <span>
-                  <p className="card-title"><strong>Flow Rate Quantity 3</strong></p>
-                  <p>{ this.state.flowRateQuantity3 }</p>
-                </span>
-
               </Card>
 
               <Carousel>
