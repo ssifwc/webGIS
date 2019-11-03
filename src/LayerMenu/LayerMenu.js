@@ -156,6 +156,54 @@ class LayerMenu extends Component {
       case 'location35':
           location = {label: 'FHWS Ruby Alton', uuid: '01738f04-0cd2-4231-be6b-5a1e1ebcac5f', radius: 75}
           break;
+      case 'location36':
+          location = {label: 'MNCK culvert at Robinson Rd', uuid: 'fb1d8f7a-b0fd-4b8e-9a76-b14f8219ff75', radius: 75}
+          break;
+      case 'location37':
+          location = {label: 'MNCK above wetlands', uuid: '0489b191-f8cf-49fe-8777-99f91407ea2b', radius: 75}
+          break;
+      case 'location38':
+          location = {label: 'WSCK Weston Creek inflow E 1 Beaverpoint Rd', uuid: '232a84fc-97ea-44e8-b326-2b44c34a4693', radius: 75}
+          break;
+      case 'location39':
+          location = {label: 'OLCK Purdy Creek at 570 Beddis Road', uuid: '4dd87bfa-0439-42dc-9516-01139a6a80a6', radius: 75}
+          break;
+      case 'location40':
+          location = {label: 'XWQM site 1 bridge creek', uuid: 'ccd36a6f-4d82-40db-bbf7-e7d040e23173', radius: 75}
+          break;
+      case 'location41':
+          location = {label: 'WKBK Walkers Brook sea outfall', uuid: 'a97b98bb-a3bf-4133-9706-f85ab2976adb', radius: 75}
+          break;
+      case 'location42':
+          location = {label: '9178 Hudson Point creek sea outfall', uuid: '4ea1fe0c-a977-454a-9113-05263b91b813', radius: 75}
+          break;
+      case 'location43':
+          location = {label: 'SWCK Stowell Lake creek inflow E2', uuid: '1cdb089c-8a4b-48f0-a68f-9d9de125fa39', radius: 75}
+          break;
+      case 'location44':
+          location = {label: '9073 Mt Park Dr creek nr junction', uuid: 'd853cc8d-70af-4526-b35f-271593f497e6', radius: 75}
+          break;
+      case 'location45':
+          location = {label: '9076 Cusheon Cove creek at bridge', uuid: 'e18d7920-c361-11e9-8cc5-95cebd7d7a52', radius: 75}
+          break;
+      case 'location46':
+          location = {label: '9192 E Cypress Creek', uuid: '9826aa14-218a-466a-bf50-a7a2ed904223', radius: 50}
+          break;
+      case 'location47':
+          location = {label: '9192 W Cypress Creek', uuid: 'aa481a75-0e08-4037-8b95-6efe9b009396', radius: 50}
+          break;
+      case 'location48':
+          location = {label: 'MWCK Beddis Roadside Culvert', uuid: 'c811516a-d9cf-48a2-ab13-853101b337a2', radius: 75}
+          break;
+      case 'location49':
+          location = {label: 'FLCK Fulford Creek feeder @ 7Ravens', uuid: 'db69c9e2-0564-416a-8fa2-762865231016', radius: 75}
+          break;
+      case 'location50':
+          location = {label: 'FLCK Mereside Creek 1 weir W off trail', uuid: '7b789d25-8429-483a-87f5-10760c900792', radius: 75}
+          break;
+      case 'location51':
+          location = {label: 'FLCK Cottonwood Farm site 2 Harris Ck', uuid: '80997efc-f459-4f51-b029-5ce6f3b1f5ed', radius: 110}
+          break;
     }
 
     this.setState({ selectLocation: e.key})
@@ -290,6 +338,11 @@ class LayerMenu extends Component {
                     <Menu.Item key={'location32'}>DCWS Epron 341 creek</Menu.Item>
                     <Menu.Item key={'location33'}>B Cr culvert at Rob. Rd</Menu.Item>
                     <Menu.Item key={'location34'}>MCWS Mansell road creek Footbridge</Menu.Item>
+                    <Menu.Item key={'location36'}>MNCK culvert at Robinson Rd</Menu.Item>
+                    <Menu.Item key={'location37'}>MNCK above wetlands</Menu.Item>
+                    <Menu.Item key={'location41'}>WKBK Walkers Brook sea outfall</Menu.Item>
+                    <Menu.Item key={'location42'}>9178 Hudson Point creek sea outfall</Menu.Item>
+                    <Menu.Item key={'location44'}>9073 Mt Park Dr creek nr junction</Menu.Item>
                   </SubMenu>
                   <SubMenu title={<span><Icon type="area-chart"/><span>Central</span></span>}>
                     <Menu.Item key={'location2'}>Weston Creek Outfall</Menu.Item>
@@ -304,6 +357,13 @@ class LayerMenu extends Component {
                     <Menu.Item key={'location27'}>1983WS Mt Park Dr Creek junction</Menu.Item>
                     <Menu.Item key={'location28'}>DCWS St Mary’s Lake damp area -I</Menu.Item>
                     <Menu.Item key={'location29'}>1996WS ?? Creek streambed</Menu.Item>
+                    <Menu.Item key={'location43'}>SWCK Stowell Lake creek inflow E2 </Menu.Item>
+                    <Menu.Item key={'location45'}>9076 Cusheon Cove creek at bridge</Menu.Item>
+                    <Menu.Item key={'location46'}>9192 E Cypress Creek</Menu.Item>
+                    <Menu.Item key={'location47'}>9192 W Cypress Creek</Menu.Item>
+                    <Menu.Item key={'location48'}>MWCK Beddis Roadside Culvert</Menu.Item>
+                    <Menu.Item key={'location49'}>FLCK Fulford Creek feeder @ 7Ravens</Menu.Item>
+                    <Menu.Item key={'location39'}>OLCK Purdy Creek at 570 Beddis Road</Menu.Item>
                   </SubMenu>
                   <SubMenu title={<span><Icon type="area-chart"/><span>South</span></span>}>
                     <Menu.Item key={'location3'}>XwWs site 2 W totem culvert</Menu.Item>
@@ -323,6 +383,8 @@ class LayerMenu extends Component {
                     <Menu.Item key={'location17'}>FHWS Stowell Ck</Menu.Item>
                     <Menu.Item key={'location18'}>FHWS Weston Ck</Menu.Item>
                     <Menu.Item key={'location35'}>FHWS Ruby Alton</Menu.Item>
+                    <Menu.Item key={'location40'}>XWQM site 1 bridge creek</Menu.Item>
+                    <Menu.Item key={'location38'}>WSCK Weston Creek inflow E 1 Beaverpoint Rd</Menu.Item>
                   </SubMenu>
 
                 </SubMenu>
