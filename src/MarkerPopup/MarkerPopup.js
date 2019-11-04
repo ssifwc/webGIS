@@ -15,9 +15,8 @@ class MarkerPopup extends Component {
       loading: true,
       visible: props.visible,
       title: '',
-      waterMatters: '',
       namedLocationIfKnown: '',
-      watershed: '',
+      islandArea: '',
       createdAt: '',
       lastSignificantPrecipitation: '',
       safeToWork: '',
@@ -67,7 +66,7 @@ class MarkerPopup extends Component {
           if (photoId) {
             photos.push(
             {
-              url: 'https://s3.amazonaws.com/ssifwc-image-bucket/' + photoId
+              url: photoId
             }
             )
           }
@@ -77,9 +76,8 @@ class MarkerPopup extends Component {
           photos: photos,
           loading: false,
           title: props.point.title,
-          waterMatters: observations[0].water_matters,
           namedLocationIfKnown: observations[0].named_location_if_known,
-          watershed: observations[0].watershed[0],
+          islandArea: observations[0].island_area,
           createdAt: observations[0].created_at,
           lastSignificantPrecipitation: observations[0].last_significant_precipitation_event,
           safeToWork: observations[0].safe_to_work_at_this_location,
@@ -103,14 +101,12 @@ class MarkerPopup extends Component {
     const items = [
       {label: 'Type of Visit', value: 'typeOfVisit'},
       {label: 'Location', value: 'namedLocationIfKnown'},
-      {label: 'Name Initials or Nickname', value: 'nameOrInitials'},
+      {label: 'SSIFWC collector - Initials or Nickname', value: 'nameOrInitials'},
       {label: 'Likely Permenance', value: 'likelyPermenance'},
-      {label: 'Name Initials or Nickname', value: 'nameOrInitials'},
-      {label: 'Rate of Flow', value: 'rateOfFlowQualitative'},
+      {label: 'Water Movement', value: 'rateOfFlowQualitative'},
       {label: 'Safe to Work at this Location', value: 'safeToWork'},
       {label: 'Last Significant Precipitation Event', value: 'lastSignificantPrecipitation'},
-      {label: 'Water Matters', value: 'this.state.waterMatters'},
-      {label: 'Watershed', value: 'watershed'},
+      {label: 'Island Area', value: 'islandArea'},
       {label: 'Comments', value: 'otherComments'},
     ]
 

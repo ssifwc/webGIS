@@ -51,9 +51,9 @@ class GraphDrawer extends Component {
           conductivity: metrics.conductivity,
           ph: metrics.ph,
           alkalinity: metrics.alkalinity,
-          dissolved_oxygen: metrics.flow_rate,
+          dissolved_oxygen: metrics.dissolved_oxygen,
           hardness: metrics.hardness,
-          flow_rate: metrics.dissolved_oxygen,
+          flow_rate: metrics.flow_rate,
           precipitation: metrics.precipitation
         });
       })

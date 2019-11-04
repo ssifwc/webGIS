@@ -33,8 +33,8 @@ class LayerMenu extends Component {
             attribution = '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://swww.openstreetmap.org/copyright">OpenStreetMap</a>'
             break; 
         default:
-            tileURL = "https://api.mapbox.com/styles/v1/mapbox/satellite-v8/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiYmFybmFieSIsImEiOiJXbFJyQWtFIn0.j7VjwkfjLd1O79VvtlzNfw";
-            attribution = '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            tileURL = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+            attribution = 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
             break; 
 
     }
