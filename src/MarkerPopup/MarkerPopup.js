@@ -15,9 +15,8 @@ class MarkerPopup extends Component {
       loading: true,
       visible: props.visible,
       title: '',
-      waterMatters: '',
       namedLocationIfKnown: '',
-      watershed: '',
+      islandArea: '',
       createdAt: '',
       lastSignificantPrecipitation: '',
       safeToWork: '',
@@ -26,9 +25,7 @@ class MarkerPopup extends Component {
       waterBodyType: '',
       likelyPermenance: '',
       rateOfFlowQualitative: '',
-      flowRateQuantity1: '',
-      flowRateQuantity2: '',
-      flowRateQuantity3: '',
+      flowRateQuantity: '',
       pH: '',
       temperature: '',
       conductivity: '',
@@ -43,7 +40,7 @@ class MarkerPopup extends Component {
       loading: true
     })
 
-    return fetch("https://lrwu47ypal.execute-api.us-east-1.amazonaws.com/dev/epicollect", {
+    return fetch("https://m0mgf48bn4.execute-api.us-east-1.amazonaws.com/dev/epicollect", {
       method: 'post',
       body: JSON.stringify({
         uuids: [point.id],
@@ -69,7 +66,7 @@ class MarkerPopup extends Component {
           if (photoId) {
             photos.push(
             {
-              url: 'https://s3.amazonaws.com/ssifwc-image-bucket/' + photoId
+              url: photoId
             }
             )
           }
@@ -79,9 +76,8 @@ class MarkerPopup extends Component {
           photos: photos,
           loading: false,
           title: props.point.title,
-          waterMatters: observations[0].water_matters,
           namedLocationIfKnown: observations[0].named_location_if_known,
-          watershed: observations[0].watershed[0],
+          islandArea: observations[0].island_area,
           createdAt: observations[0].created_at,
           lastSignificantPrecipitation: observations[0].last_significant_precipitation_event,
           safeToWork: observations[0].safe_to_work_at_this_location,
@@ -90,9 +86,7 @@ class MarkerPopup extends Component {
           waterBodyType: observations[0].water_body_type,
           likelyPermenance: observations[0].likely_permenance,
           rateOfFlowQualitative: observations[0].rate_of_flow_qualitative,
-          flowRateQuantity1: observations[0].flow_rate_quantity_1,
-          flowRateQuantity2: observations[0].flow_rate_quantity_2,
-          flowRateQuantity3: observations[0].flow_rate_quantity_3,
+          flowRateQuantity: observations[0].flow_rate_average,
           pH: observations[0].ph,
           temperature: observations[0].temperature,
           conductivity: observations[0].conductivity,
@@ -107,14 +101,12 @@ class MarkerPopup extends Component {
     const items = [
       {label: 'Type of Visit', value: 'typeOfVisit'},
       {label: 'Location', value: 'namedLocationIfKnown'},
-      {label: 'Name Initials or Nickname', value: 'nameOrInitials'},
+      {label: 'SSIFWC collector - Initials or Nickname', value: 'nameOrInitials'},
       {label: 'Likely Permenance', value: 'likelyPermenance'},
-      {label: 'Name Initials or Nickname', value: 'nameOrInitials'},
-      {label: 'Rate of Flow', value: 'rateOfFlowQualitative'},
+      {label: 'Water Movement', value: 'rateOfFlowQualitative'},
       {label: 'Safe to Work at this Location', value: 'safeToWork'},
       {label: 'Last Significant Precipitation Event', value: 'lastSignificantPrecipitation'},
-      {label: 'Water Matters', value: 'this.state.waterMatters'},
-      {label: 'Watershed', value: 'watershed'},
+      {label: 'Island Area', value: 'islandArea'},
       {label: 'Comments', value: 'otherComments'},
     ]
 
@@ -174,18 +166,9 @@ class MarkerPopup extends Component {
                 </span>
 
                 <span>
-                  <p className="card-title"><strong>Flow Rate Quantity 1</strong></p>
-                  <p>{ this.state.flowRateQuantity1 }</p>
+                  <p className="card-title"><strong>Flow Rate Quantity</strong></p>
+                  <p>{ this.state.flowRateQuantity }</p>
                 </span>
-                <span>
-                  <p className="card-title"><strong>Flow Rate Quantity 2</strong></p>
-                  <p>{ this.state.flowRateQuantity2 }</p>
-                </span>
-                <span>
-                  <p className="card-title"><strong>Flow Rate Quantity 3</strong></p>
-                  <p>{ this.state.flowRateQuantity3 }</p>
-                </span>
-
               </Card>
 
               <Carousel>

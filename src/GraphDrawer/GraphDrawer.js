@@ -14,6 +14,9 @@ class GraphDrawer extends Component {
       conductivity: null,
       ph: null,
       flow_rate: null,
+      hardness: null,
+      dissolved_oxygen: null,
+      alkalinity: null,
       visible: props.visible,
       location: props.location,
       precipitation: null,
@@ -22,22 +25,12 @@ class GraphDrawer extends Component {
 
   getData = (uuid, radius) => {
 
-    return fetch("https://lrwu47ypal.execute-api.us-east-1.amazonaws.com/dev/metrics", {
+    return fetch("https://m0mgf48bn4.execute-api.us-east-1.amazonaws.com/dev/metrics", {
       method: 'post',
       body: JSON.stringify({
         uuid: uuid,
         radius: radius
       })
-    }).then(function(response) {
-      return response.json();
-    }).then(function(json) {
-      return json
-    });
-  }
-
-  getPrecipitation() {
-    return fetch("https://lrwu47ypal.execute-api.us-east-1.amazonaws.com/dev/precipitation", {
-      method: 'get'
     }).then(function(response) {
       return response.json();
     }).then(function(json) {
@@ -57,14 +50,12 @@ class GraphDrawer extends Component {
           temperature: metrics.temperature,
           conductivity: metrics.conductivity,
           ph: metrics.ph,
+          alkalinity: metrics.alkalinity,
+          dissolved_oxygen: metrics.dissolved_oxygen,
+          hardness: metrics.hardness,
           flow_rate: metrics.flow_rate,
+          precipitation: metrics.precipitation
         });
-      })
-
-      this.getPrecipitation().then((precipitation) => {
-        this.setState({
-          precipitation: precipitation
-        })
       })
     }
   }
@@ -106,6 +97,30 @@ class GraphDrawer extends Component {
               <Tooltip/>
           </LineChart>
 
+          <LineChart width={450} height={250} data={this.state.dissolved_oxygen}>
+              <Line type="monotone" dataKey="value" stroke="#0F9D58" />
+              <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
+              <YAxis label={{ value: "Dissolved Oxygen (mg/L)", angle: -90, position: 'insideBottomLeft' }} domain={[0, 300]}/>
+              <CartesianGrid strokeDasharray="3 3"/>
+              <Tooltip/>
+          </LineChart>
+
+          <LineChart width={450} height={250} data={this.state.alkalinity}>
+              <Line type="monotone" dataKey="value" stroke="#32a852" />
+              <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
+              <YAxis label={{ value: "Alkalinity (ppm)", angle: -90, position: 'insideBottomLeft' }} domain={[0, 300]}/>
+              <CartesianGrid strokeDasharray="3 3"/>
+              <Tooltip/>
+          </LineChart>
+
+          <LineChart width={450} height={250} data={this.state.hardness}>
+              <Line type="monotone" dataKey="value" stroke="#32a852" />
+              <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
+              <YAxis label={{ value: "Hardness (ppm)", angle: -90, position: 'insideBottomLeft' }} domain={[0, 180]}/>
+              <CartesianGrid strokeDasharray="3 3"/>
+              <Tooltip/>
+          </LineChart>
+
           <LineChart width={450} height={250} data={this.state.flow_rate}>
               <Line type="monotone" dataKey="value" stroke="#add8e6" />
               <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
@@ -117,7 +132,7 @@ class GraphDrawer extends Component {
           <LineChart width={450} height={250} data={this.state.precipitation}>
               <CartesianGrid strokeDasharray="3 3"/>
               <Tooltip/>
-              <XAxis dataKey="date" tickFormatter={this.formatXAxis}/>
+              <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
               <YAxis label={{ value: "Precipitation (mm) GISS SSI", angle: -90, position: 'insideBottomLeft' }}/>
               <Line dataKey="value" fill="#8884d8" />
           </LineChart>

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, ScaleControl, Polygon, Marker, Popup, Polyline } from 'react-leaflet';
+import 'react-leaflet-markercluster/dist/styles.min.css';
 import L from 'leaflet';
+import MarkerClusterGroup from './MarkerCluster.js';
 
 
 const SSIFWCmarker = new L.Icon({
@@ -69,6 +71,7 @@ class MapView extends Component {
           center={ this.state.center } 
           zoom={ this.state.zoom }
           onMoveend={ this.handleMoveend }
+          maxZoom={30}
       >
         {
           this.state.polygons.map(function(polygon, index) {
@@ -87,15 +90,17 @@ class MapView extends Component {
                    </Polygon>
           })
         }
-        {
-          this.state.points.map((point, index) => 
-            <FieldObservation 
-                      point={ point } 
-                      key={ index }
-                      onMarkerSelect={ this.props.onMarkerSelect }
-                      />
-          )
-        }
+        <MarkerClusterGroup>
+          {
+            this.state.points.map((point, index) => 
+              <FieldObservation 
+                        point={ point } 
+                        key={ index }
+                        onMarkerSelect={ this.props.onMarkerSelect }
+                        />
+            )
+          }
+        </MarkerClusterGroup>
         {
           this.state.lines.map((line, index) => {
               return <Polyline
