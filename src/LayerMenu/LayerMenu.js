@@ -56,9 +56,9 @@ class LayerMenu extends Component {
           break;
       case 'location2':
           location = {label: 'WSCK Weston Creek', uuid: '2b13eb3f-d0d1-4fab-bb25-438a207616b4', radius: 15}
-          break;
+          break; */
       case 'location3':
-          location = {label: 'XWQW site 2 W CK near totem culvert', uuid: '70e67ce6-50d4-48ea-a234-1840ad05c335', radius: 43.425}
+          location = {label: 'XWQW site 2 W CK near totem culvert', uuid: '70e67ce6-50d4-48ea-a234-1840ad05c335', radius: 43.43}
           break;
       case 'location4':
           location = {label: 'XWQW site 4 E CK near totem big culvert', uuid: 'a42ae885-fcce-4680-a9ff-5c7dd7a627a5', radius: 28.42}
@@ -82,10 +82,10 @@ class LayerMenu extends Component {
           location = {label: '8397 Creek 352 Isabella AOI', uuid: 'da18f7b1-10d3-4f10-a521-14337b58aad7', radius: 75}
           break;
       case 'location11':
-          location = {label: 'FHWS Gerald’s Creek', uuid: '9530b0c7-22cc-43ca-9fab-15f449164f12', radius: 75}
+          location = {label: 'GRCK Gerald’s Creek at outfall', uuid: '9530b0c7-22cc-43ca-9fab-15f449164f12', radius: 75}
           break;
       case 'location12':
-          location = {label: 'FHWS Ferncreek outfall', uuid: 'f90470eb-2114-4b33-8635-96dd8ce33f92', radius: 75}
+          location = {label: 'FNCK Ferncreek outfall', uuid: 'f90470eb-2114-4b33-8635-96dd8ce33f92', radius: 75}
           break;
       case 'location13':
           location = {label: 'LRCK Larlow (Geralds Corner) Creek at outfall', uuid: 'a32e1c83-0d72-4762-891a-3130c9d9882f', radius: 125}
@@ -100,10 +100,10 @@ class LayerMenu extends Component {
           location = {label: '2112 Waterfall-I Tuam Mountain Road', uuid: '7fec04f1-c84c-4c5e-8266-d5d2b59af089', radius: 75}
           break;
       case 'location17':
-          location = {label: 'STCK Stowell Ck', uuid: 'db19cce9-0b5a-4ff1-bb16-07ad3b491406', radius: 80}
+          location = {label: 'STCK Stowell Creek at Fishladder', uuid: 'daa75d780-f7bd-11e9-a507-dd967f37deb4', radius: 80}
           break;
       case 'location18':
-          location = {label: 'WSCK Weston Ck', uuid: 'bcb616a0-8d5c-451d-a200-8beed8b8ad58', radius: 75}
+          location = {label: 'WSCK Weston Creek at outfall', uuid: 'f28c485c-58d4-4a47-9104-b1f1bb05c77e', radius: 75}
           break;
       case 'location19':
           location = {label: 'MYCK Monty Creek outfall', uuid: '4392e2b3-b03a-4c0f-b938-3ecd6fa0cd48', radius: 75}
@@ -129,9 +129,9 @@ class LayerMenu extends Component {
       case 'location26':
           location = {label: 'DUCK Channel Ridge Junction Culvert ', uuid: '239fc417-699d-4871-bc11-3e368c9086b8', radius: 50}
           break;
-      case 'location27':
+   /* case 'location27':
           location = {label: '1983 Mt Park Dr Creek junction', uuid: 'd853cc8d-70af-4526-b35f-271593f497e6', radius: 75}
-          break;
+          break; */
       case 'location28':
           location = {label: 'DUCK St Mary’s Lake damp area -I', uuid: '61472820-5727-4811-b838-42fcfa9edc27', radius: 75}
           break;
@@ -146,16 +146,16 @@ class LayerMenu extends Component {
           break;
       case 'location32':
           location = {label: 'DUCK creek Epron 341 AOI', uuid: '9fdc9666-6257-4b9a-9930-c41a3faff32f', radius: 75}
-          break;
+          break; 
       case 'location33':
           location = {label: 'BLCK Creek culvert at Rob Road', uuid: '1828d8d9-b9cf-4a59-bc11-a41f721db89d', radius: 75}
           break;
       case 'location34':
           location = {label: 'MNCK Mansell road creek Footbridge', uuid: '4c102572-9776-430a-ba16-f398a73aa94f', radius: 75}
           break;
-      case 'location35':
+   /* case 'location35':
           location = {label: 'FHWS Ruby Alton', uuid: '01738f04-0cd2-4231-be6b-5a1e1ebcac5f', radius: 75}
-          break;
+          break; */
       case 'location36':
           location = {label: 'MNCK culvert at Robinson Rd', uuid: 'fb1d8f7a-b0fd-4b8e-9a76-b14f8219ff75', radius: 75}
           break;
@@ -181,7 +181,7 @@ class LayerMenu extends Component {
           location = {label: 'SWCK Stowell Lake creek inflow E2', uuid: '1cdb089c-8a4b-48f0-a68f-9d9de125fa39', radius: 75}
           break;
       case 'location44':
-          location = {label: '9073 Mt Park Dr creek nr junction', uuid: 'd853cc8d-70af-4526-b35f-271593f497e6', radius: 75}
+          location = {label: '9073 Mt Park Dr Creek nr junction', uuid: 'd853cc8d-70af-4526-b35f-271593f497e6', radius: 75}
           break;
       case 'location45':
           location = {label: '9076 Cusheon Cove creek at bridge', uuid: 'e18d7920-c361-11e9-8cc5-95cebd7d7a52', radius: 75}
@@ -204,6 +204,59 @@ class LayerMenu extends Component {
       case 'location51':
           location = {label: 'FLCK Cottonwood Farm site 2 Harris Ck', uuid: '80997efc-f459-4f51-b029-5ce6f3b1f5ed', radius: 110}
           break;
+      case 'location52':
+          location = {label: '2019 Ruby Alton Creek at outfall', uuid: '7ea0ccf0-8d23-11e9-bf52-67c7725fded3', radius: 75}
+          break;
+      case 'location53':
+          location = {label: '2112 Tuam Waterfall Cr lower site', uuid: '97c96f6b-b852-457a-9dee-321501a8efd1', radius: 75}
+          break;
+      case 'location54':
+          location = {label: '2112 Cable Creek gorge narrows', uuid: 'f59a5d30-54a4-4289-ae2c-ebab324ea5f7', radius: 75}
+          break;
+      case 'location55':
+          location = {label: '2112 Cable Creek gorge (all)', uuid: 'a36e84f0-1234-11ea-bd45-3d9149462f58', radius: 75}
+          break;
+      case 'location56':
+          location = {label: '2112 Cable Creek at Mountain Rd', uuid: '97c96f6b-b852-457a-9dee-321501a8efd1', radius: 50}
+          break;
+     case 'location57':
+          location = {label: 'SWCK Stowell Creek below Lake outfall', uuid: '8aef9597-b748-400b-903e-085e173d7049', radius: 75}
+          break;
+     case 'location58':
+          location = {label: 'RUAL Lumley Creek culvert nr 1171 Isabella Pt Rd', uuid: 'bab71b70-db36-11e9-b067-4f3c37255ba1', radius: 75}
+          break;
+     case 'location59':
+          location = {label: 'RUAL Lumley Creek near mouth', uuid: '9ab8cb30-1235-11ea-bd45-3d9149462f58', radius: 75}
+          break;
+     case 'location60':
+          location = {label: 'RUAL Holmes Rd Creek near 1171 Isabella', uuid: '1fcb80c7-2fa1-4adb-be03-ed53f81fb523', radius: 75}
+          break;
+     case 'location61':
+          location = {label: 'RUAL Summerhill Spring', uuid: '6b485219-b6e9-4a0f-a0e4-6da8c1b61cbd', radius: 75}
+          break;
+     case 'location62':
+          location = {label: 'XWQW Lee Creek in valley low point WW', uuid: '6e48d324-9b52-415e-ae13-0a11c9677197', radius: 75}
+          break;
+     case 'location63':
+          location = {label: 'XWQW Lee Creek at trail near wetland1', uuid: '7104896f-8fd9-428b-8a5b-d844233ea9a6', radius: 75}
+          break;
+     case 'location64':
+          location = {label: 'XWQW Lee Creek at culvert park roadside', uuid: 'cd467724-b820-40b1-a0bc-c43c706c8ce1', radius: 75}
+          break;
+     case 'location65':
+          location = {label: 'WSCK Uplands spring 1', uuid: '36e8a023-ce2d-4c57-861d-4e5223d4aaf6', radius: 75}
+          break;
+     case 'location66':
+          location = {label: 'OLCK Purdy Creek at 570 Beddis Road', uuid: '0b5034eb-b6c3-4c1c-ab37-2a6efb35db57', radius: 75}
+          break;
+     case 'location67':
+          location = {label: 'OLCK Old Lowther Creek at sea outfall', uuid: '596107c6-d731-4154-87ab-9d2e1aea5b38', radius: 75}
+          break;
+     case 'location68':
+          location = {label: 'MWCK Mowhinna Creek Beddis Roadside Culvert', uuid: 'e112d582-4532-47d2-a1ba-cc7ebb6b735b', radius: 75}
+          break;
+
+
     }
 
     this.setState({ selectLocation: e.key})
@@ -332,60 +385,81 @@ class LayerMenu extends Component {
                     </span>
                   }
                 >
-                  <SubMenu title={<span><Icon type="area-chart"/><span>North</span></span>}>  
-                    <Menu.Item key={'location30'}>Possibly ocean outlet For North View wetlands</Menu.Item>
-                    <Menu.Item key={'location31'}>McFadden Creek</Menu.Item>
-                    <Menu.Item key={'location32'}>DCWS Epron 341 creek</Menu.Item>
-                    <Menu.Item key={'location33'}>B Cr culvert at Rob. Rd</Menu.Item>
-                    <Menu.Item key={'location34'}>MCWS Mansell road creek Footbridge</Menu.Item>
-                    <Menu.Item key={'location36'}>MNCK culvert at 
-                      </Menu.Item>
+                  <SubMenu title={<span><Icon type="area-chart"/><span>North</span></span>}> 
+                    <Menu.Item key={'location25'}>DUCK Spur Culvert</Menu.Item>
+                    <Menu.Item key={'location26'}>DUCK Channel Ridge Junction Culvert</Menu.Item>
+                    <Menu.Item key={'location28'}>DUCK St Mary’s Lake damp area -I</Menu.Item>
+                    <Menu.Item key={'location29'}>1996WS Creek streambed</Menu.Item>
+                    <Menu.Item key={'location30'}>1983 Creek outlet For North View wetlands</Menu.Item>
+                    <Menu.Item key={'location31'}>MKCK McFadden Creek at roadside</Menu.Item>
+                    <Menu.Item key={'location32'}>DUCK creek Epron 341 AOI</Menu.Item>
+                    <Menu.Item key={'location33'}>BLCK Creek culvert at Rob Road</Menu.Item>
+                    <Menu.Item key={'location34'}>MNCK Mansell road creek Footbridge</Menu.Item>
+                    <Menu.Item key={'location36'}>MNCK culvert at Robinson Rd</Menu.Item>
                     <Menu.Item key={'location37'}>MNCK above wetlands</Menu.Item>
                     <Menu.Item key={'location41'}>WKBK Walkers Brook sea outfall</Menu.Item>
                     <Menu.Item key={'location42'}>9178 Hudson Point creek sea outfall</Menu.Item>
-                    <Menu.Item key={'location44'}>9073 Mt Park Dr creek nr junction</Menu.Item>
+                    <Menu.Item key={'location44'}>073 Mt Park Dr Creek junction</Menu.Item>
                   </SubMenu>
+
                   <SubMenu title={<span><Icon type="area-chart"/><span>Central</span></span>}>
-                    <Menu.Item key={'location2'}>Weston Creek Outfall</Menu.Item>
-                    <Menu.Item key={'location19'}>MYCKWS Monty Creek dam waterfall</Menu.Item>
-                    <Menu.Item key={'location20'}>9117WS to-be-named-X creek Bridgman 240 culvert</Menu.Item>
-                    <Menu.Item key={'location21'}>CCWS Cusheon (Jarads Grove) Creek 1</Menu.Item>
-                    <Menu.Item key={'location22'}>CCWS Blackburn Road Culvert 5</Menu.Item>
-                    <Menu.Item key={'location23'}>CCWS Blackburn Lake area Culvert 1 Hitchcock  1 2 junction</Menu.Item>
-                    <Menu.Item key={'location24'}>Dukes Road #427, creek N side arm</Menu.Item>
-                    <Menu.Item key={'location25'}>DCWS Spur Culvert</Menu.Item>
-                    <Menu.Item key={'location26'}>CH/Rdg Junction Culvert</Menu.Item>
-                    <Menu.Item key={'location27'}>1983WS Mt Park Dr Creek junction</Menu.Item>
-                    <Menu.Item key={'location28'}>DCWS St Mary’s Lake damp area -I</Menu.Item>
-                    <Menu.Item key={'location29'}>1996WS ?? Creek streambed</Menu.Item>
+                    //<Menu.Item key={'location2'}>Weston Creek Outfall</Menu.Item>
+                    <Menu.Item key={'location19'}>MYCK Monty Creek outfall</Menu.Item>
+                    <Menu.Item key={'location20'}>9117 Menhinick corner creek</Menu.Item>
+                    <Menu.Item key={'location21'}>CUCK Cusheon Creek Jarads Grove nr bridge</Menu.Item>
+                    <Menu.Item key={'location22'}>CUCK Blackburn Road Culvert 5</Menu.Item>
+                    <Menu.Item key={'location23'}>CUCK Blackburn Lake area Culvert 1 Hitchcock 1 2 junction</Menu.Item>
+                    <Menu.Item key={'location24'}>FLCK Dukes Road #427, creek N side arm</Menu.Item>
+                    //<Menu.Item key={'location27'}>1983WS Mt Park Dr Creek junction</Menu.Item>
+                    <Menu.Item key={'location39'}>OLCK Purdy Creek at 570 Beddis Road</Menu.Item>
                     <Menu.Item key={'location43'}>SWCK Stowell Lake creek inflow E2 </Menu.Item>
+                    <Menu.Item key={'location57'}>SWCK Stowell Creek below Lake outfall</Menu.Item>
                     <Menu.Item key={'location45'}>9076 Cusheon Cove creek at bridge</Menu.Item>
                     <Menu.Item key={'location46'}>9192 E Cypress Creek</Menu.Item>
                     <Menu.Item key={'location47'}>9192 W Cypress Creek</Menu.Item>
                     <Menu.Item key={'location48'}>MWCK Beddis Roadside Culvert</Menu.Item>
+                    <Menu.Item key={'location68'}>MWCK Mowhinna Creek Beddis Roadside Culvert</Menu.Item>
+                   <Menu.Item key={'location65'}>WSCK Uplands spring 1</Menu.Item>
+                    <Menu.Item key={'location66'}>OLCK Purdy Creek at 570 Beddis Road</Menu.Item>
+                    <Menu.Item key={'location67'}>OLCK Old Lowther Creek at sea outfall</Menu.Item>
                     <Menu.Item key={'location49'}>FLCK Fulford Creek feeder @ 7Ravens</Menu.Item>
-                    <Menu.Item key={'location39'}>OLCK Purdy Creek at 570 Beddis Road</Menu.Item>
                   </SubMenu>
+
                   <SubMenu title={<span><Icon type="area-chart"/><span>South</span></span>}>
-                    <Menu.Item key={'location3'}>XwWs site 2 W totem culvert</Menu.Item>
-                    <Menu.Item key={'location4'}>XwWs site 4 E totem big culvet left</Menu.Item>
-                    <Menu.Item key={'location5'}>Big bridge/ burgoyne bay/south side</Menu.Item>
-                    <Menu.Item key={'location6'}>FCWS Fulford Creek 2321 Streamsong Pond</Menu.Item>
-                    <Menu.Item key={'location7'}>FCWS Fulford Creek 2321 Streamsong Fulford Creek foot bridge</Menu.Item>
-                    <Menu.Item key={'location8'}>FCWS FulfordGanges Road side outside 2321 Streamsong gate</Menu.Item>
-                    <Menu.Item key={'location9'}>FHWS Fulford Creek Spur</Menu.Item>
-                    <Menu.Item key={'location10'}>FHWS 352 Isabella AOI Creek</Menu.Item>
-                    <Menu.Item key={'location11'}>FHWS Gerald’s Creek</Menu.Item>
-                    <Menu.Item key={'location12'}>FHWS Ferncreek outfall</Menu.Item>
-                    <Menu.Item key={'location13'}>FHWS Grants Corner</Menu.Item>
-                    <Menu.Item key={'location14'}>2109WS 1194 Isabella adjacent creek</Menu.Item>
-                    <Menu.Item key={'location15'}>2112 WS Tuam waterfall I gulley</Menu.Item>
-                    <Menu.Item key={'location16'}>Scouting 2112WS Waterfall1 Mt Drive</Menu.Item>
-                    <Menu.Item key={'location17'}>FHWS Stowell Ck</Menu.Item>
-                    <Menu.Item key={'location18'}>FHWS Weston Ck</Menu.Item>
-                    <Menu.Item key={'location35'}>FHWS Ruby Alton</Menu.Item>
+                    <Menu.Item key={'location3'}>XWQW site 2 W Ck near totem culvert</Menu.Item>
+                    <Menu.Item key={'location4'}>XWQW site 4 E Ck near totem big culvert</Menu.Item>
+                    <Menu.Item key={'location5'}>XWQW big bridge south side</Menu.Item>
+                    <Menu.Item key={'location6'}>FLCK Pond Streamsong</Menu.Item>
+                    <Menu.Item key={'location7'}>FCWS FLCK Fulford Creek at Streamsong foot bridge</Menu.Item>
+                    <Menu.Item key={'location8'}>FLCK Jones (Kyler) Creek adjacent to Streamsong gate</Menu.Item>
+                    <Menu.Item key={'location9'}>SLCK Soule Creek (Fulford Creek spur)</Menu.Item>
+                    <Menu.Item key={'location10'}>8397 Creek 352 Isabella AOI</Menu.Item>
+                    <Menu.Item key={'location11'}>GRCK Geralds Creek at outfall</Menu.Item>
+                    <Menu.Item key={'location12'}>FNCK Ferncreek outfall</Menu.Item>
+                    <Menu.Item key={'location13'}>LRCK Larlow (Geralds Corner) Creek at outfall</Menu.Item>
+                    <Menu.Item key={'location14'}>2109 Creek adjacent to 1194 Isabella</Menu.Item>
+                    <Menu.Item key={'location15'}>2112 Waterfall-I Tuam gulley at outfall</Menu.Item>
+                    <Menu.Item key={'location16'}>2112 Waterfall-I Tuam Mountain Road</Menu.Item>
+                    <Menu.Item key={'location53'}>2112 Tuam Waterfall Cr lower site</Menu.Item>
+                    <Menu.Item key={'location54'}>2112 Cable Creek gorge narrows</Menu.Item>
+                    <Menu.Item key={'location55'}>2112 Cable Creek gorge (all)</Menu.Item>
+                    <Menu.Item key={'location56'}>2112 Cable Creek at Mountain Rd</Menu.Item>
+                    <Menu.Item key={'location17'}>STCK Stowell Creek at Fishladder</Menu.Item>
+                    <Menu.Item key={'location18'}>WSCK Weston Creek at outfall</Menu.Item>
+                    //<Menu.Item key={'location35'}>FHWS Ruby Alton</Menu.Item>
                     <Menu.Item key={'location40'}>XWQM site 1 bridge creek</Menu.Item>
                     <Menu.Item key={'location38'}>WSCK Weston Creek inflow E 1 Beaverpoint Rd</Menu.Item>
+                    <Menu.Item key={'location50'}>FLCK Mereside Creek 1 weir W off trail</Menu.Item>
+                    <Menu.Item key={'location51'}>FLCK Cottonwood Farm site 2 Harris Ck</Menu.Item>
+                    <Menu.Item key={'location52'}>2019 Ruby Alton Creek at outfall</Menu.Item>
+                    <Menu.Item key={'location58'}>RUAL Lumley Creek culvert nr 1171 Isabella Pt Rd</Menu.Item>
+                    <Menu.Item key={'location59'}>RUAL Lumley Creek near mouth</Menu.Item>
+                    <Menu.Item key={'location60'}>RUAL Holmes Rd Creek near 1171 Isabella</Menu.Item>
+                    <Menu.Item key={'location61'}>RUAL Summerhill Spring</Menu.Item>
+                    <Menu.Item key={'location62'}>XWQW Lee Creek in valley low point WW</Menu.Item>
+                    <Menu.Item key={'location63'}>XWQW Lee Creek at trail near wetland1</Menu.Item>
+                    <Menu.Item key={'location64'}>XWQW Lee Creek at culvert park roadside</Menu.Item>
+ 
                   </SubMenu>
 
                 </SubMenu>
