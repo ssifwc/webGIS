@@ -56,7 +56,7 @@ class LayerMenu extends Component {
           break;
       case 'location2':
           location = {label: 'WSCK Weston Creek', uuid: '2b13eb3f-d0d1-4fab-bb25-438a207616b4', radius: 15}
-          break; */
+          break;
       case 'location3':
           location = {label: 'XWQW site 2 W CK near totem culvert', uuid: '70e67ce6-50d4-48ea-a234-1840ad05c335', radius: 43.43}
           break;
