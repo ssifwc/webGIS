@@ -1,0 +1,10 @@
+{
+  "app": "node deploy.js",
+  "context": {
+    "stack.name": "webgis-website-and-pipeline",
+    "github.owner": "ssifwc",
+    "github.repo": "webGIS",
+    "github.branch": "master",
+    "github.token.secretmanager.secret.id": "webgis-github-token"
+  }
+}

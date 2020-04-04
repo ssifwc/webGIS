@@ -1,0 +1,892 @@
+{
+  "Resources": {
+    "webgiswebsitebucket26DC2DE9": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": "ssifwc-webgis-joel",
+        "WebsiteConfiguration": {
+          "ErrorDocument": "error.html",
+          "IndexDocument": "index.html"
+        }
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-website-bucket/Resource"
+      }
+    },
+    "webgiswebsitebucketPolicy8B524956": {
+      "Type": "AWS::S3::BucketPolicy",
+      "Properties": {
+        "Bucket": {
+          "Ref": "webgiswebsitebucket26DC2DE9"
+        },
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "s3:GetObject",
+              "Effect": "Allow",
+              "Principal": "*",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    {
+                      "Fn::GetAtt": [
+                        "webgiswebsitebucket26DC2DE9",
+                        "Arn"
+                      ]
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-website-bucket/Policy/Resource"
+      }
+    },
+    "webgispipelineArtifactsBucketEncryptionKey49C75285": {
+      "Type": "AWS::KMS::Key",
+      "Properties": {
+        "KeyPolicy": {
+          "Statement": [
+            {
+              "Action": [
+                "kms:Create*",
+                "kms:Describe*",
+                "kms:Enable*",
+                "kms:List*",
+                "kms:Put*",
+                "kms:Update*",
+                "kms:Revoke*",
+                "kms:Disable*",
+                "kms:Get*",
+                "kms:Delete*",
+                "kms:ScheduleKeyDeletion",
+                "kms:CancelKeyDeletion",
+                "kms:GenerateDataKey",
+                "kms:TagResource",
+                "kms:UntagResource"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":iam::",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":root"
+                    ]
+                  ]
+                }
+              },
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::GetAtt": [
+                    "webgispipelineRoleE140759E",
+                    "Arn"
+                  ]
+                }
+              },
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::GetAtt": [
+                    "buildwebgispackageRole07C9BB63",
+                    "Arn"
+                  ]
+                }
+              },
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::GetAtt": [
+                    "buildwebgispackageRole07C9BB63",
+                    "Arn"
+                  ]
+                }
+              },
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::GetAtt": [
+                    "webgispipelinedeploywebgiswebsitetos3WebsiteCodePipelineActionRole352A209A",
+                    "Arn"
+                  ]
+                }
+              },
+              "Resource": "*"
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/ArtifactsBucketEncryptionKey/Resource"
+      }
+    },
+    "webgispipelineArtifactsBucketBF0B7163": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
+                "KMSMasterKeyID": {
+                  "Fn::GetAtt": [
+                    "webgispipelineArtifactsBucketEncryptionKey49C75285",
+                    "Arn"
+                  ]
+                },
+                "SSEAlgorithm": "aws:kms"
+              }
+            }
+          ]
+        },
+        "PublicAccessBlockConfiguration": {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true
+        }
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/ArtifactsBucket/Resource"
+      }
+    },
+    "webgispipelineArtifactsBucketEncryptionKeyAlias019AE8CC": {
+      "Type": "AWS::KMS::Alias",
+      "Properties": {
+        "AliasName": "alias/codepipeline-webgiswebsiteandpipelinewebgispipeline743df415",
+        "TargetKeyId": {
+          "Fn::GetAtt": [
+            "webgispipelineArtifactsBucketEncryptionKey49C75285",
+            "Arn"
+          ]
+        }
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/ArtifactsBucketEncryptionKeyAlias/Resource"
+      }
+    },
+    "webgispipelineRoleE140759E": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "codepipeline.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/Role/Resource"
+      }
+    },
+    "webgispipelineRoleDefaultPolicy8A1BBED5": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "webgispipelineArtifactsBucketBF0B7163",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "webgispipelineArtifactsBucketBF0B7163",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "webgispipelineArtifactsBucketEncryptionKey49C75285",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "webgispipelinebuildwebgispackageWebsiteCodePipelineActionRoleBFDE9158",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "webgispipelinedeploywebgiswebsitetos3WebsiteCodePipelineActionRole352A209A",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "webgispipelineRoleDefaultPolicy8A1BBED5",
+        "Roles": [
+          {
+            "Ref": "webgispipelineRoleE140759E"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/Role/DefaultPolicy/Resource"
+      }
+    },
+    "webgispipeline37770BA7": {
+      "Type": "AWS::CodePipeline::Pipeline",
+      "Properties": {
+        "RoleArn": {
+          "Fn::GetAtt": [
+            "webgispipelineRoleE140759E",
+            "Arn"
+          ]
+        },
+        "Stages": [
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
+                  "Category": "Source",
+                  "Owner": "ThirdParty",
+                  "Provider": "GitHub",
+                  "Version": "1"
+                },
+                "Configuration": {
+                  "Owner": "ssifwc",
+                  "Repo": "webGIS",
+                  "Branch": "master",
+                  "OAuthToken": "{{resolve:secretsmanager:webgis-github-token:SecretString:::}}",
+                  "PollForSourceChanges": false
+                },
+                "Name": "Checkout",
+                "OutputArtifacts": [
+                  {
+                    "Name": "Artifact_checkout-project-source_Checkout"
+                  }
+                ],
+                "RunOrder": 1
+              }
+            ],
+            "Name": "checkout-project-source"
+          },
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
+                  "Category": "Build",
+                  "Owner": "AWS",
+                  "Provider": "CodeBuild",
+                  "Version": "1"
+                },
+                "Configuration": {
+                  "ProjectName": {
+                    "Ref": "buildwebgispackage36B10C3B"
+                  }
+                },
+                "InputArtifacts": [
+                  {
+                    "Name": "Artifact_checkout-project-source_Checkout"
+                  }
+                ],
+                "Name": "Website",
+                "OutputArtifacts": [
+                  {
+                    "Name": "Artifact_build-webgis-package_Website"
+                  }
+                ],
+                "RoleArn": {
+                  "Fn::GetAtt": [
+                    "webgispipelinebuildwebgispackageWebsiteCodePipelineActionRoleBFDE9158",
+                    "Arn"
+                  ]
+                },
+                "RunOrder": 1
+              }
+            ],
+            "Name": "build-webgis-package"
+          },
+          {
+            "Actions": [
+              {
+                "ActionTypeId": {
+                  "Category": "Deploy",
+                  "Owner": "AWS",
+                  "Provider": "S3",
+                  "Version": "1"
+                },
+                "Configuration": {
+                  "BucketName": {
+                    "Ref": "webgiswebsitebucket26DC2DE9"
+                  },
+                  "Extract": "true"
+                },
+                "InputArtifacts": [
+                  {
+                    "Name": "Artifact_build-webgis-package_Website"
+                  }
+                ],
+                "Name": "Website",
+                "RoleArn": {
+                  "Fn::GetAtt": [
+                    "webgispipelinedeploywebgiswebsitetos3WebsiteCodePipelineActionRole352A209A",
+                    "Arn"
+                  ]
+                },
+                "RunOrder": 1
+              }
+            ],
+            "Name": "deploy-webgis-website-to-s3"
+          }
+        ],
+        "ArtifactStore": {
+          "EncryptionKey": {
+            "Id": {
+              "Fn::GetAtt": [
+                "webgispipelineArtifactsBucketEncryptionKey49C75285",
+                "Arn"
+              ]
+            },
+            "Type": "KMS"
+          },
+          "Location": {
+            "Ref": "webgispipelineArtifactsBucketBF0B7163"
+          },
+          "Type": "S3"
+        },
+        "Name": "webgis-pipeline",
+        "RestartExecutionOnUpdate": true
+      },
+      "DependsOn": [
+        "webgispipelineRoleDefaultPolicy8A1BBED5",
+        "webgispipelineRoleE140759E"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/Resource"
+      }
+    },
+    "webgispipelinecheckoutprojectsourceCheckoutWebhookResource538A4F75": {
+      "Type": "AWS::CodePipeline::Webhook",
+      "Properties": {
+        "Authentication": "GITHUB_HMAC",
+        "AuthenticationConfiguration": {
+          "SecretToken": "{{resolve:secretsmanager:webgis-github-token:SecretString:::}}"
+        },
+        "Filters": [
+          {
+            "JsonPath": "$.ref",
+            "MatchEquals": "refs/heads/{Branch}"
+          }
+        ],
+        "TargetAction": "Checkout",
+        "TargetPipeline": {
+          "Ref": "webgispipeline37770BA7"
+        },
+        "TargetPipelineVersion": 1,
+        "RegisterWithThirdParty": true
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/checkout-project-source/Checkout/WebhookResource"
+      }
+    },
+    "webgispipelinebuildwebgispackageWebsiteCodePipelineActionRoleBFDE9158": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":iam::",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":root"
+                    ]
+                  ]
+                }
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/build-webgis-package/Website/CodePipelineActionRole/Resource"
+      }
+    },
+    "webgispipelinebuildwebgispackageWebsiteCodePipelineActionRoleDefaultPolicy2E30A481": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "codebuild:BatchGetBuilds",
+                "codebuild:StartBuild",
+                "codebuild:StopBuild"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "buildwebgispackage36B10C3B",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "webgispipelinebuildwebgispackageWebsiteCodePipelineActionRoleDefaultPolicy2E30A481",
+        "Roles": [
+          {
+            "Ref": "webgispipelinebuildwebgispackageWebsiteCodePipelineActionRoleBFDE9158"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/build-webgis-package/Website/CodePipelineActionRole/DefaultPolicy/Resource"
+      }
+    },
+    "webgispipelinedeploywebgiswebsitetos3WebsiteCodePipelineActionRole352A209A": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":iam::",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":root"
+                    ]
+                  ]
+                }
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/deploy-webgis-website-to-s3/Website/CodePipelineActionRole/Resource"
+      }
+    },
+    "webgispipelinedeploywebgiswebsitetos3WebsiteCodePipelineActionRoleDefaultPolicy12AC3802": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "webgiswebsitebucket26DC2DE9",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "webgiswebsitebucket26DC2DE9",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "webgispipelineArtifactsBucketBF0B7163",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "webgispipelineArtifactsBucketBF0B7163",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "webgispipelineArtifactsBucketEncryptionKey49C75285",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "webgispipelinedeploywebgiswebsitetos3WebsiteCodePipelineActionRoleDefaultPolicy12AC3802",
+        "Roles": [
+          {
+            "Ref": "webgispipelinedeploywebgiswebsitetos3WebsiteCodePipelineActionRole352A209A"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/webgis-pipeline/deploy-webgis-website-to-s3/Website/CodePipelineActionRole/DefaultPolicy/Resource"
+      }
+    },
+    "buildwebgispackageRole07C9BB63": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "codebuild.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/build-webgis-package/Role/Resource"
+      }
+    },
+    "buildwebgispackageRoleDefaultPolicy1EB00B2E": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":logs:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":log-group:/aws/codebuild/",
+                      {
+                        "Ref": "buildwebgispackage36B10C3B"
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":logs:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":",
+                      {
+                        "Ref": "AWS::AccountId"
+                      },
+                      ":log-group:/aws/codebuild/",
+                      {
+                        "Ref": "buildwebgispackage36B10C3B"
+                      },
+                      ":*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "s3:GetObject*",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*",
+                "s3:PutObject*",
+                "s3:Abort*"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "webgispipelineArtifactsBucketBF0B7163",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "webgispipelineArtifactsBucketBF0B7163",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:DescribeKey",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "webgispipelineArtifactsBucketEncryptionKey49C75285",
+                  "Arn"
+                ]
+              }
+            },
+            {
+              "Action": [
+                "kms:Decrypt",
+                "kms:Encrypt",
+                "kms:ReEncrypt*",
+                "kms:GenerateDataKey*"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "webgispipelineArtifactsBucketEncryptionKey49C75285",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "buildwebgispackageRoleDefaultPolicy1EB00B2E",
+        "Roles": [
+          {
+            "Ref": "buildwebgispackageRole07C9BB63"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/build-webgis-package/Role/DefaultPolicy/Resource"
+      }
+    },
+    "buildwebgispackage36B10C3B": {
+      "Type": "AWS::CodeBuild::Project",
+      "Properties": {
+        "Artifacts": {
+          "Type": "CODEPIPELINE"
+        },
+        "Environment": {
+          "ComputeType": "BUILD_GENERAL1_SMALL",
+          "Image": "aws/codebuild/standard:1.0",
+          "PrivilegedMode": false,
+          "Type": "LINUX_CONTAINER"
+        },
+        "ServiceRole": {
+          "Fn::GetAtt": [
+            "buildwebgispackageRole07C9BB63",
+            "Arn"
+          ]
+        },
+        "Source": {
+          "BuildSpec": "buildspec.yml",
+          "Type": "CODEPIPELINE"
+        },
+        "EncryptionKey": {
+          "Fn::GetAtt": [
+            "webgispipelineArtifactsBucketEncryptionKey49C75285",
+            "Arn"
+          ]
+        },
+        "Name": "webgis"
+      },
+      "Metadata": {
+        "aws:cdk:path": "webgis-website-and-pipeline/build-webgis-package/Resource"
+      }
+    }
+  },
+  "Outputs": {
+    "WebsiteURL": {
+      "Description": "Website URL",
+      "Value": {
+        "Fn::GetAtt": [
+          "webgiswebsitebucket26DC2DE9",
+          "WebsiteURL"
+        ]
+      }
+    }
+  }
+}
