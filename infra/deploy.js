@@ -33,7 +33,7 @@ const websiteBucketName = process.env.BUCKET_NAME
                 owner: app.node.tryGetContext("github.owner"),
                 repo: app.node.tryGetContext("github.repo"),
                 branch: app.node.tryGetContext("github.branch"),
-                oauthToken: CDK.SecretValue.secretsManager(app.node.tryGetContext("github.token.secretmanager.secret.id")),
+                oauthToken: CDK.SecretValue.secretsManager(app.node.tryGetContext("github.token.secretsmanager.secret.id")),
                 output: outputSources
             }),
         ],
@@ -46,7 +46,8 @@ const websiteBucketName = process.env.BUCKET_NAME
                 actionName: 'Website',
                 project: new CodeBuild.PipelineProject(stack, 'build-webgis-package', {
                     projectName: 'webgis',
-                    buildSpec: CodeBuild.BuildSpec.fromSourceFilename('buildspec.yml'),
+                    environment: CodeBuild.LinuxBuildImage.STANDARD_2_0,
+                    buildSpec: CodeBuild.BuildSpec.fromSourceFilename('infra/buildspec.yml'),
                 }),
                 input: outputSources,
                 outputs: [outputWebsite],

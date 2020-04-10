@@ -6,4 +6,5 @@ fi
 BUCKET_NAME=$1
 export BUCKET_NAME
 
+cdk bootstrap
 cdk deploy --require-approval never

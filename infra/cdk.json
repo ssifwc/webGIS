@@ -4,7 +4,7 @@
     "stack.name": "webgis-website-and-pipeline",
     "github.owner": "ssifwc",
     "github.repo": "webGIS",
-    "github.branch": "master",
-    "github.token.secretmanager.secret.id": "webgis-github-token"
+    "github.branch": "prepare-awscodepipeline",
+    "github.token.secretsmanager.secret.id": "aws-ssifwc-github-token"
   }
 }
