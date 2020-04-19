@@ -9,5 +9,8 @@
     "@aws-cdk/aws-codepipeline-actions": "1.32.2",
     "@aws-cdk/aws-s3": "1.32.2",
     "@aws-cdk/core": "1.32.2"
+  },
+  "dependencies": {
+    "yarn": "^1.22.4"
   }
 }

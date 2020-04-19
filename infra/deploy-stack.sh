@@ -5,5 +5,6 @@ if [ -z "$1" ]
 fi
 BUCKET_NAME=$1
 
+yarn install
 cdk bootstrap
 cdk deploy --require-approval never -c bucket.name="$BUCKET_NAME"

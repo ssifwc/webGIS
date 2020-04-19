@@ -4,8 +4,6 @@ const S3 = require('@aws-cdk/aws-s3');
 const CodePipeline = require('@aws-cdk/aws-codepipeline');
 const CodePipelineAction = require('@aws-cdk/aws-codepipeline-actions');
 
-    const props = {}
-
     app = new CDK.App()
     const stack = new CDK.Stack(app, app.node.tryGetContext("stack.name"));
 
