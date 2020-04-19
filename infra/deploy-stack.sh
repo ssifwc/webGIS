@@ -4,7 +4,6 @@ if [ -z "$1" ]
   exit 0
 fi
 BUCKET_NAME=$1
-export BUCKET_NAME
 
 cdk bootstrap
-cdk deploy --require-approval never
+cdk deploy --require-approval never -c bucket.name="$BUCKET_NAME"

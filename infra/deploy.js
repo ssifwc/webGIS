@@ -4,21 +4,21 @@ const S3 = require('@aws-cdk/aws-s3');
 const CodePipeline = require('@aws-cdk/aws-codepipeline');
 const CodePipelineAction = require('@aws-cdk/aws-codepipeline-actions');
 
-const props = { region: "us-east-1" }
-const websiteBucketName = process.env.BUCKET_NAME
+    const props = {}
 
     app = new CDK.App()
-    const stack = new CDK.Stack(app, app.node.tryGetContext("stack.name"), props);
+    const stack = new CDK.Stack(app, app.node.tryGetContext("stack.name"));
 
-    const bucketWebsite = new S3.Bucket(stack, 'webgis-website-bucket', {
+    const bucketWebsite = new S3.Bucket(stack, 'ssifwc-webgis-website-bucket', {
         websiteIndexDocument: 'index.html',
         websiteErrorDocument: 'error.html',
         publicReadAccess: true,
-        bucketName: websiteBucketName
+        bucketName: app.node.tryGetContext("bucket.name"),
+        versioned: true
     })
 
-    const pipeline = new CodePipeline.Pipeline(stack, 'webgis-pipeline', {
-        pipelineName: 'webgis-pipeline',
+    const pipeline = new CodePipeline.Pipeline(stack, 'ssifwc-webgis-pipeline', {
+        pipelineName: 'ssifwc-webgis-pipeline',
         restartExecutionOnUpdate: true
     })
 
@@ -46,7 +46,7 @@ const websiteBucketName = process.env.BUCKET_NAME
                 actionName: 'Website',
                 project: new CodeBuild.PipelineProject(stack, 'build-webgis-package', {
                     projectName: 'webgis',
-                    environment: CodeBuild.LinuxBuildImage.STANDARD_2_0,
+                    environment: CodeBuild.LinuxBuildImage.AMAZON_LINUX_2_3,
                     buildSpec: CodeBuild.BuildSpec.fromSourceFilename('infra/buildspec.yml'),
                 }),
                 input: outputSources,

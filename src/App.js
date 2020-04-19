@@ -35,7 +35,6 @@ class App extends Component {
 			layers: [
 				{'label': 'epicollect', 'display': 'Field Observations', 'onToggle': this.handleSelectEpicollect, 'colour': '#F5A623', 'menu': 'ssifwcFeatures'},
 				{'label': 'watershedsSSIWC', 'display': 'Watershed Group Areas', 'onToggle': this.handleSelectWatersheds, 'colour': '#4A90E2', 'menu': 'ssifwcFeatures'},
-				//{'label': 'trails', 'display': 'Trails', 'onToggle': null, 'colour': 'red', 'menu': 'ssifwcFeatures'},
 				{'label': 'wells', 'display': 'Water wells (FLNR)', 'onToggle': this.handleSelectWells, 'colour': 'blue', 'menu': 'waterEarth'},
 				{'label': 'springs', 'display': 'Licensed springs (FLNR)', 'onToggle': this.handleSelectSprings, 'colour': 'blue', 'menu': 'waterEarth'},
 				{'label': 'faults', 'display': 'Faults (Local/Regional)', 'onToggle': this.handleSelectFaults, 'menu': 'waterEarth', 'colours': {
