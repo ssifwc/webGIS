@@ -356,7 +356,7 @@ class App extends Component {
 	}
 
 	loadData(resource) {
-		return fetch("https://m0mgf48bn4.execute-api.us-east-1.amazonaws.com/dev/" + resource).then(function(response) {
+		return fetch("https://" + process.env.REACT_APP_API_BASE_URL +  "/dev/" + resource).then(function(response) {
 			return response.json();
 		}).then(function(json) {
 			return json;

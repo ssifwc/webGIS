@@ -71,7 +71,7 @@ class MapView extends Component {
           center={ this.state.center } 
           zoom={ this.state.zoom }
           onMoveend={ this.handleMoveend }
-          maxZoom={30}
+          maxZoom={18}
       >
         {
           this.state.polygons.map(function(polygon, index) {
@@ -139,6 +139,7 @@ class FieldObservation extends Component {
 
   getMarker = (label) => {
     if (label === 'epicollect') {
+        console.log()
         return SSIFWCmarker
     } else if (label === 'springs') {
         return springsMarker

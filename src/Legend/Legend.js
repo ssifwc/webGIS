@@ -25,7 +25,7 @@ class Legend extends Component {
             this.state.legendItems.map((legendItem, index) => 
               <span className='legend-item'>
                 <p>{legendItem.label}</p>
-                <div className='legend-colour-box' style={{'background-color': legendItem.colour}}></div>
+                <div className='legend-colour-box' style={{'background-color': legendItem.colour}}/>
               </span>
             )
         }
