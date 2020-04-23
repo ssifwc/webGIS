@@ -6,10 +6,10 @@ phases:
       nodejs: 12
   pre_build:
     commands:
-      - yarn
+      - npm install
   build:
     commands:
-      - yarn build
+      - npm run-script build
 artifacts:
   files:
     - "**/*"
