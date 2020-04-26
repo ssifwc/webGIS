@@ -54,7 +54,7 @@ class MarkerPopup extends Component {
     });
   }
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
 
     if (props.visible === true) {
       this.getData(props.point).then((observations) => {

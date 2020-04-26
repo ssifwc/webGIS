@@ -280,7 +280,7 @@ class LayerMenu extends Component {
                         <Menu.Item 
                           key={ index }> 
                           <span
-                            style={{"display": "flex", "align-items": "center", "justify-content": "space-between"}}
+                            style={{"display": "flex", "alignItems": "center", "justifyContent": "space-between"}}
                           >
                             {layer.display} 
                             <Switch 
@@ -308,7 +308,7 @@ class LayerMenu extends Component {
                         <Menu.Item 
                           key={ index }> 
                           <span
-                            style={{"display": "flex", "align-items": "center", "justify-content": "space-between"}}
+                            style={{"display": "flex", "alignItems": "center", "justifyContent": "space-between"}}
                           >
                             {layer.display} 
                             <Switch 
@@ -336,7 +336,7 @@ class LayerMenu extends Component {
                         <Menu.Item 
                           key={ index }> 
                           <span
-                            style={{"display": "flex", "align-items": "center", "justify-content": "space-between"}}
+                            style={{"display": "flex", "alignItems": "center", "justifyContent": "space-between"}}
                           >
                             {layer.display} 
                             <Switch 

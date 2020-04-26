@@ -40,7 +40,7 @@ class GraphDrawer extends Component {
 
   formatXAxis = (tickItem) => { return moment(tickItem).format('DD MMM YY') }
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
 
     if (props.visible === true) {
       this.getData(props.location.uuid, props.location.radius).then((metrics) => {
