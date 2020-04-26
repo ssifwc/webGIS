@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Drawer, Skeleton, Carousel, Card, Icon } from 'antd'
+import { Drawer, Skeleton, Carousel, Card } from 'antd'
+import DashOutlined from '@ant-design/icons';
 import Moment from 'react-moment';
 import './MarkerPopup.css'
 
@@ -40,7 +41,7 @@ class MarkerPopup extends Component {
       loading: true
     })
 
-    return fetch("https://m0mgf48bn4.execute-api.us-east-1.amazonaws.com/dev/epicollect", {
+    return fetch("https://" + process.env.REACT_APP_API_BASE_URL +  "/dev/epicollect", {
       method: 'post',
       body: JSON.stringify({
         uuids: [point.id],
@@ -53,7 +54,7 @@ class MarkerPopup extends Component {
     });
   }
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
 
     if (props.visible === true) {
       this.getData(props.point).then((observations) => {
@@ -135,7 +136,7 @@ class MarkerPopup extends Component {
                                   this.state[item.value] ? (
                                       <p>{this.state[item.value]}</p>
                                     ) : (
-                                      <Icon type="dash" />
+                                      <DashOutlined/>
                                     )
                                 }
                               </span>
@@ -151,7 +152,7 @@ class MarkerPopup extends Component {
                     this.state.pH ? (
                         <p>{this.state.pH}</p>
                       ) : (
-                        <Icon type="dash" />
+                        <DashOutlined/>
                       )
                   }
                 </span>

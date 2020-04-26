@@ -62,16 +62,19 @@ class MapView extends Component {
       tileURL: props.tileURL,
       attribution: props.attribution,
     })
+
+      this.leafletMap.leafletElement.invalidateSize();
   }
 
-  render() {
+    render() {
     return (
-      <Map 
-          ref={ m => { this.leafletMap = m; }}
+      <Map id="map-component"
+          ref={ (m) => this.leafletMap = m }
           center={ this.state.center } 
           zoom={ this.state.zoom }
-          onMoveend={ this.handleMoveend }
-          maxZoom={30}
+           maxZoom={30}
+           onMoveend={ this.handleMoveend }
+
       >
         {
           this.state.polygons.map(function(polygon, index) {
@@ -139,6 +142,7 @@ class FieldObservation extends Component {
 
   getMarker = (label) => {
     if (label === 'epicollect') {
+        console.log()
         return SSIFWCmarker
     } else if (label === 'springs') {
         return springsMarker

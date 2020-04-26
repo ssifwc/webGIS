@@ -25,7 +25,7 @@ class GraphDrawer extends Component {
 
   getData = (uuid, radius) => {
 
-    return fetch("https://m0mgf48bn4.execute-api.us-east-1.amazonaws.com/dev/metrics", {
+    return fetch("https://" + process.env.REACT_APP_API_BASE_URL +  "/dev/metrics", {
       method: 'post',
       body: JSON.stringify({
         uuid: uuid,
@@ -40,7 +40,7 @@ class GraphDrawer extends Component {
 
   formatXAxis = (tickItem) => { return moment(tickItem).format('DD MMM YY') }
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
 
     if (props.visible === true) {
       this.getData(props.location.uuid, props.location.radius).then((metrics) => {

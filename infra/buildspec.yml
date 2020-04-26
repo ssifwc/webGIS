@@ -1,5 +1,8 @@
 version: 0.2
 
+env:
+  variables:
+    REACT_APP_API_BASE_URL: m0mgf48bn4.execute-api.us-east-1.amazonaws.com
 phases:
   install:
     runtime-versions:

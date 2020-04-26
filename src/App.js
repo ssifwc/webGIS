@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, Modal, Button } from 'antd'
+import { InfoOutlined } from '@ant-design/icons';
 import PageFooter from './Footer/Footer'
 import LayerMenu from './LayerMenu/LayerMenu'
 import MapView from './MapView/MapView'
@@ -14,9 +15,9 @@ const { Header, Content, Sider } = Layout;
 class App extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { 
-			center: [48.820541, -123.439710],
+		this.state = {
 			zoom: 12,
+			center: [48.820541, -123.439710],
 			collapsed: false,
 			showPopup: true,
 			drawerVisible: false,
@@ -356,7 +357,7 @@ class App extends Component {
 	}
 
 	loadData(resource) {
-		return fetch("https://m0mgf48bn4.execute-api.us-east-1.amazonaws.com/dev/" + resource).then(function(response) {
+		return fetch("https://" + process.env.REACT_APP_API_BASE_URL +  "/dev/" + resource).then(function(response) {
 			return response.json();
 		}).then(function(json) {
 			return json;
@@ -435,7 +436,6 @@ class App extends Component {
 	}
 
 	render() {
-
 		return (
 	      <Layout style={{ minHeight: '100vh' }}>
 
@@ -473,26 +473,24 @@ class App extends Component {
 	          onCancel={this.handleOk}
 	          footer={[null]}
 	        >
-	          <p>This is home page of the Water Protection Societies (WPS) Salt Spring Island (SSI),  FreshWater Catalogue(FWC) project. 
+	          <p>This is home page of the Water Protection Societies (WPS) Salt Spring Island (SSI),  FreshWater Catalogue(FWC) project.
 				This website provides a "public facing” view of the freshwater data that has been collected by the SSIFWC project Watershed
-				Stewardship Groups. For further information on the SSIFWC project, or to get involved, please drop an email to 
+				Stewardship Groups. For further information on the SSIFWC project, or to get involved, please drop an email to
 				<a href="mailto:ssifwc@gmail.com?Subject=Hello" target="_top"> ssifwc@gmail.com</a>.
 			  </p>
 			  <p>This website was designed and built by Barney Gordon</p>
 	        </Modal>
 
 	        <Layout>
-		        <Header 
-		        	theme="dark" 
-		        >
+		        <Header theme="dark">
 		          	<div className="logo">
 		          		<img src="logo-circle.png" alt={''}/>
 		          	</div>
 		          	<span style={{'display': 'flex', "alignItems": "center", 'flex': '1', 'marginLeft': '100px'}}>
 			           	<h1 className="title">SSIFWC</h1>
-			           	<h3 className="title" style={{'marginLeft': '50px'}}>Salt Spring Island Freshwater Catalogue</h3>
+			           	<h3 className="title" style={{'marginLeft': '50px'}}>Salt Spring Island FreshWater Catalogue</h3>
 		           	</span>
-		          	<Button type="primary" shape="circle" icon="info" size={'large'} onClick={this.showModal} />
+		          	<Button type="primary" shape="circle" icon={<InfoOutlined />} size={'large'} onClick={this.showModal} />
 		        </Header>
 
 		        <Content style={{ margin: '10px', display: 'flex' }}>

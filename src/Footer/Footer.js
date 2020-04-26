@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Layout, Button, Icon } from 'antd'
+import { Layout, Button } from 'antd'
+import {FacebookFilled, GoogleCircleFilled, HomeFilled, MailFilled} from '@ant-design/icons'
 
 import './Footer.css'
 
@@ -20,16 +21,16 @@ class PageFooter extends Component {
     return (
           <Footer theme='dark' className='footer'>
                 <Button type="primary" shape="circle" size={'large'} href={'https://www.facebook.com/groups/SSIFWCWSG/invited/'}>
-                    <Icon type="facebook" theme="filled" />
+                    <FacebookFilled/>
                 </Button>
                 <Button type="primary" shape="circle" size={'large'} href={'https://drive.google.com/drive/u/0/my-drive'}>
-                    <Icon type="google" />
+                    <GoogleCircleFilled/>
                 </Button>
                 <Button type="primary" shape="circle" size={'large'} href={'http://www.ssiwaterpreservationsociety.ca'}>
-                    <Icon type="home" theme="filled" />
+                    <HomeFilled/>
                 </Button>
                 <Button type="primary" shape="circle" size={'large'} href={'mailto:ssifwc@gmail.com?Subject=Hello'}>
-                    <Icon type="mail" theme="filled" />
+                    <MailFilled/>
                 </Button>
           </Footer>
       )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Menu, Icon, Switch } from 'antd'
+import { Menu, Switch } from 'antd'
+import {AreaChartOutlined,AppstoreOutlined,BorderOutlined} from '@ant-design/icons';
 
 const SubMenu = Menu.SubMenu;
 
@@ -272,14 +273,14 @@ class LayerMenu extends Component {
               mode="inline">
                 <SubMenu 
                   key="1" 
-                  title={<span><Icon type="appstore" /><span>SSIFWC & WPS Features</span></span>}>
+                  title={<span><AppstoreOutlined/><span>SSIFWC & WPS Features</span></span>}>
                   {this.state.layers.map((layer, index) => {
                     if(layer.menu === 'ssifwcFeatures') {
                       return (
                         <Menu.Item 
                           key={ index }> 
                           <span
-                            style={{"display": "flex", "align-items": "center", "justify-content": "space-between"}}
+                            style={{"display": "flex", "alignItems": "center", "justifyContent": "space-between"}}
                           >
                             {layer.display} 
                             <Switch 
@@ -300,14 +301,14 @@ class LayerMenu extends Component {
               mode="inline">
                 <SubMenu 
                   key="1" 
-                  title={<span><Icon type="appstore" /><span>Water & Earth features</span></span>}>
+                  title={<span><AppstoreOutlined/><span>Water & Earth features</span></span>}>
                   {this.state.layers.map((layer, index) => {
                     if(layer.menu === 'waterEarth') {
                        return (
                         <Menu.Item 
                           key={ index }> 
                           <span
-                            style={{"display": "flex", "align-items": "center", "justify-content": "space-between"}}
+                            style={{"display": "flex", "alignItems": "center", "justifyContent": "space-between"}}
                           >
                             {layer.display} 
                             <Switch 
@@ -328,14 +329,14 @@ class LayerMenu extends Component {
               mode="inline">
                 <SubMenu 
                   key="1" 
-                  title={<span><Icon type="appstore" /><span>Administrative features</span></span>}>
+                  title={<span><AppstoreOutlined/><span>Administrative features</span></span>}>
                   {this.state.layers.map((layer, index) => {
                     if(layer.menu === 'admin') {
                        return (
                         <Menu.Item 
                           key={ index }> 
                           <span
-                            style={{"display": "flex", "align-items": "center", "justify-content": "space-between"}}
+                            style={{"display": "flex", "alignItems": "center", "justifyContent": "space-between"}}
                           >
                             {layer.display} 
                             <Switch 
@@ -360,7 +361,7 @@ class LayerMenu extends Component {
                   key="2" 
                   title={
                     <span>
-                      <Icon type="border" />
+                      <BorderOutlined/>
                       <span>Basemap</span>
                     </span>
                   }>
@@ -380,12 +381,12 @@ class LayerMenu extends Component {
                   key="3"
                   title={
                     <span>
-                      <Icon type="area-chart"/>
+                      <AreaChartOutlined/>
                       <span>Charts</span>
                     </span>
                   }
                 >
-                  <SubMenu title={<span><Icon type="area-chart"/><span>North</span></span>}> 
+                  <SubMenu title={<span><AreaChartOutlined/><span>North</span></span>}>
                     <Menu.Item key={'location25'}>DUCK Spur Culvert</Menu.Item>
                     <Menu.Item key={'location26'}>DUCK Channel Ridge Junction Culvert</Menu.Item>
                     <Menu.Item key={'location28'}>DUCK St Mary’s Lake damp area -I</Menu.Item>
@@ -402,15 +403,15 @@ class LayerMenu extends Component {
                     <Menu.Item key={'location44'}>073 Mt Park Dr Creek junction</Menu.Item>
                   </SubMenu>
 
-                  <SubMenu title={<span><Icon type="area-chart"/><span>Central</span></span>}>
-                    //<Menu.Item key={'location2'}>Weston Creek Outfall</Menu.Item>
+                  <SubMenu title={<span><AreaChartOutlined/><span>Central</span></span>}>
+                    <Menu.Item key={'location2'}>Weston Creek Outfall</Menu.Item>
                     <Menu.Item key={'location19'}>MYCK Monty Creek outfall</Menu.Item>
                     <Menu.Item key={'location20'}>9117 Menhinick corner creek</Menu.Item>
                     <Menu.Item key={'location21'}>CUCK Cusheon Creek Jarads Grove nr bridge</Menu.Item>
                     <Menu.Item key={'location22'}>CUCK Blackburn Road Culvert 5</Menu.Item>
                     <Menu.Item key={'location23'}>CUCK Blackburn Lake area Culvert 1 Hitchcock 1 2 junction</Menu.Item>
                     <Menu.Item key={'location24'}>FLCK Dukes Road #427, creek N side arm</Menu.Item>
-                    //<Menu.Item key={'location27'}>1983WS Mt Park Dr Creek junction</Menu.Item>
+                    <Menu.Item key={'location27'}>1983WS Mt Park Dr Creek junction</Menu.Item>
                     <Menu.Item key={'location39'}>OLCK Purdy Creek at 570 Beddis Road</Menu.Item>
                     <Menu.Item key={'location43'}>SWCK Stowell Lake creek inflow E2 </Menu.Item>
                     <Menu.Item key={'location57'}>SWCK Stowell Creek below Lake outfall</Menu.Item>
@@ -425,7 +426,7 @@ class LayerMenu extends Component {
                     <Menu.Item key={'location49'}>FLCK Fulford Creek feeder @ 7Ravens</Menu.Item>
                   </SubMenu>
 
-                  <SubMenu title={<span><Icon type="area-chart"/><span>South</span></span>}>
+                  <SubMenu title={<span><AreaChartOutlined/><span>South</span></span>}>
                     <Menu.Item key={'location3'}>XWQW site 2 W Ck near totem culvert</Menu.Item>
                     <Menu.Item key={'location4'}>XWQW site 4 E Ck near totem big culvert</Menu.Item>
                     <Menu.Item key={'location5'}>XWQW big bridge south side</Menu.Item>
@@ -446,7 +447,7 @@ class LayerMenu extends Component {
                     <Menu.Item key={'location56'}>2112 Cable Creek at Mountain Rd</Menu.Item>
                     <Menu.Item key={'location17'}>STCK Stowell Creek at Fishladder</Menu.Item>
                     <Menu.Item key={'location18'}>WSCK Weston Creek at outfall</Menu.Item>
-                    //<Menu.Item key={'location35'}>FHWS Ruby Alton</Menu.Item>
+                    <Menu.Item key={'location35'}>FHWS Ruby Alton</Menu.Item>
                     <Menu.Item key={'location40'}>XWQM site 1 bridge creek</Menu.Item>
                     <Menu.Item key={'location38'}>WSCK Weston Creek inflow E 1 Beaverpoint Rd</Menu.Item>
                     <Menu.Item key={'location50'}>FLCK Mereside Creek 1 weir W off trail</Menu.Item>
