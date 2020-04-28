@@ -28,9 +28,10 @@ class MapView extends Component {
 
   constructor(props) {
   	super(props);
-  	this.state = { 
+  	this.state = {
       center: props.center, 
       zoom: props.zoom,
+        maxClusterRadius: props.maxClusterRadius,
       polygons: [],
       points: [],
       lines: [],
@@ -46,6 +47,7 @@ class MapView extends Component {
   }
 
   componentWillReceiveProps(props) {
+
     if (props.polygons !== this.state.polygons) {
       this.setState({ polygons: props.polygons });
     }
@@ -72,7 +74,7 @@ class MapView extends Component {
           ref={ (m) => this.leafletMap = m }
           center={ this.state.center } 
           zoom={ this.state.zoom }
-           maxZoom={30}
+           maxZoom={18}
            onMoveend={ this.handleMoveend }
 
       >
@@ -93,9 +95,10 @@ class MapView extends Component {
                    </Polygon>
           })
         }
-        <MarkerClusterGroup>
+        <MarkerClusterGroup maxClusterRadius={this.state.maxClusterRadius}>
           {
-            this.state.points.map((point, index) => 
+            this.state.points.map((point, index) =>
+
               <FieldObservation 
                         point={ point } 
                         key={ index }
@@ -142,7 +145,6 @@ class FieldObservation extends Component {
 
   getMarker = (label) => {
     if (label === 'epicollect') {
-        console.log()
         return SSIFWCmarker
     } else if (label === 'springs') {
         return springsMarker

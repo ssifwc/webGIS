@@ -24,6 +24,7 @@ class App extends Component {
 			graphsVisible: false,
 			selectedPoint: null,
 			selectedLocation: null,
+			maxClusterRadius: 40,
 			tileURL: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 			attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
 			points: [],
@@ -497,6 +498,7 @@ class App extends Component {
 		            <MapView
 		            	center={this.state.center}
 		            	zoom={this.state.zoom}
+						maxClusterRadius={this.state.maxClusterRadius}
 		              	className="map"
 		              	polygons={this.state.polygons} 
 		              	points={this.state.points} 
