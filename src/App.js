@@ -19,7 +19,7 @@ class App extends Component {
 			zoom: 12,
 			center: [48.820541, -123.439710],
 			collapsed: false,
-			showPopup: true,
+			showPopup: false,
 			drawerVisible: false,
 			graphsVisible: false,
 			selectedPoint: null,
@@ -35,16 +35,16 @@ class App extends Component {
 			lineStore: [],
 			legendItems: [],
 			layers: [
-				{'label': 'epicollect', 'display': 'Field Observations', 'onToggle': this.handleSelectEpicollect, 'colour': '#F5A623', 'menu': 'ssifwcFeatures'},
-				{'label': 'watershedsSSIWC', 'display': 'Watershed Group Areas', 'onToggle': this.handleSelectWatersheds, 'colour': '#4A90E2', 'menu': 'ssifwcFeatures'},
-				{'label': 'wells', 'display': 'Water wells (FLNR)', 'onToggle': this.handleSelectWells, 'colour': 'blue', 'menu': 'waterEarth'},
-				{'label': 'springs', 'display': 'Licensed springs (FLNR)', 'onToggle': this.handleSelectSprings, 'colour': 'blue', 'menu': 'waterEarth'},
-				{'label': 'faults', 'display': 'Faults (Local/Regional)', 'onToggle': this.handleSelectFaults, 'menu': 'waterEarth', 'colours': {
+				{'label': 'epicollect', 'display': 'Field Observations', 'onToggle': this.handleSelectEpicollect,  'hasLegend': false, 'colour': 'deepskyblue', 'menu': 'ssifwcFeatures'},
+				{'label': 'watershedsSSIWC', 'display': 'Watershed Group Areas', 'onToggle': this.handleSelectWatersheds, 'colour': 'grey', 'hasLegend': true, 'menu': 'ssifwcFeatures'},
+				{'label': 'wells', 'display': 'Water wells (FLNR)', 'onToggle': this.handleSelectWells, 'colour': 'dodgerblue', 'hasLegend': false, 'menu': 'waterEarth'},
+				{'label': 'springs', 'display': 'Licensed springs (FLNR)', 'onToggle': this.handleSelectSprings, 'colour': 'royalblue', 'hasLegend': false, 'menu': 'waterEarth'},
+				{'label': 'faults', 'display': 'Faults (Local/Regional)', 'onToggle': this.handleSelectFaults, 'colour': 'grey', 'menu': 'waterEarth', 'hasLegend': true, 'colours':  {
 					'Fault': 'blue',
 					'Thrust': 'red',
 					'Greenwood': 'black'
 				}},
-				{'label': 'watersheds', 'display': 'Watersheds (CRD)', 'colours': {
+				{'label': 'watersheds', 'display': 'Watersheds (CRD)', 'colour': 'grey', 'colours': {
 					'Arnold Creek': 'blue',
 					'McFadden Creek': 'red',
 					'Mansell Creek': 'yellow',
@@ -74,11 +74,11 @@ class App extends Component {
 					'Monty Creek': 'purple',
 					'Larlow Creek': 'green'
 				}, 'onToggle': this.handleSelectWatersheds, 'hasLegend': true, 'filterKey': 'name', 'menu': 'waterEarth'},
-				{'label': 'aquifers', 'display': 'Aquifers (Hodge, 1995)', 'colours': {
+				{'label': 'aquifers', 'display': 'Aquifers (Hodge, 1995)', 'colour': 'grey', 'colours': {
 					'Sand and Gravel': 'brown',
 					'Bedrock': 'black'
 				}, 'filterKey': 'materials', 'onToggle': this.handleSelectAquifers, 'hasLegend': true, 'menu': 'waterEarth'},
-				{'label': 'greenwood', 'display': 'Geology (Greenwood, 2009)', 'colours': {
+				{'label': 'greenwood', 'display': 'Geology (Greenwood, 2009)', 'colour': 'grey', 'colours': {
 					'Comox Formation (conglomerate)': '#6baf6a',
 					'Cedar District Formation (sandstone & mudstone)': '#a7ff69',
 					'Northumberland Formation (mudstone & sandstone)': '#b3f6af',
@@ -104,7 +104,7 @@ class App extends Component {
 					'DeCourcy Formation (sandstone)': '#b1f6af',
 					'Haslam Formation (shale & mudstone)': '#66de63'
 				}, 'filterKey': 'description', 'onToggle': this.handleSelectGreenwood, 'hasLegend': true, 'menu': 'waterEarth'},
-				{'label': 'parcels', 'display': 'Land Owner Status', 'onToggle': this.handleSelectParcels, 'colour': '#B8E986', 'menu': 'admin'},
+				{'label': 'parcels', 'display': 'Land Owner Status', 'onToggle': this.handleSelectParcels, 'colour': 'grey', 'menu': 'admin'},
 			],
 			toggled: {
 				'epicollect': true,
@@ -115,8 +115,6 @@ class App extends Component {
 			}, 
 		}
 	}
-
-		//return layer.colours[polygon.meta[layer.filterKey]]
 
 	handleSelectEpicollect = () => {
 		const layer = this.getLayerByName('epicollect')
@@ -306,6 +304,7 @@ class App extends Component {
 			this.setState({legendItems: this.state.legendItems.filter(function(item) {
 				return item.layer !== layer.label
 			})})
+
 		}
 
 		const polygonStore = this.state.polygonStore.filter(function(polygon) {
@@ -428,7 +427,6 @@ class App extends Component {
 	componentDidMount() {
 		var layerName;
 		for (layerName in this.state.toggled) {
-
 			if (this.state.toggled[layerName]) {
 				const layer = this.getLayerByName(layerName);
 				this.handleLoadPoints(layer);
