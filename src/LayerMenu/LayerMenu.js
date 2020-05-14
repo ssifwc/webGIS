@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Menu, Switch } from 'antd'
 import {AreaChartOutlined,AppstoreOutlined,BorderOutlined} from '@ant-design/icons';
+import "./layer-menu.css";
 
 const SubMenu = Menu.SubMenu;
-
 
 class LayerMenu extends Component {
 
@@ -277,15 +277,13 @@ class LayerMenu extends Component {
                   {this.state.layers.map((layer, index) => {
                     if(layer.menu === 'ssifwcFeatures') {
                       return (
-                        <Menu.Item 
-                          key={ index }> 
-                          <span
-                            style={{"display": "flex", "alignItems": "center", "justifyContent": "space-between"}}
-                          >
-                            {layer.display} 
-                            <Switch 
-                              defaultChecked={this.state.toggled[layer.label]} 
-                              onChange={layer.onToggle} />
+                        <Menu.Item key={ index }>
+                          <span style={{"display": "flex", "alignItems": "center", "justifyContent": "space-between"}} >
+                            {layer.display}
+                            <Switch
+                                style={{"background-color": layer.colour}}
+                                defaultChecked={this.state.toggled[layer.label]}
+                                onChange={layer.onToggle} />
                           </span> 
                         </Menu.Item>
                         )
@@ -311,7 +309,8 @@ class LayerMenu extends Component {
                             style={{"display": "flex", "alignItems": "center", "justifyContent": "space-between"}}
                           >
                             {layer.display} 
-                            <Switch 
+                            <Switch
+                                style={{"background-color": layer.colour}}
                               defaultChecked={this.state.toggled[layer.label]} 
                               onChange={layer.onToggle} />
                           </span> 

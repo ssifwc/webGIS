@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, ScaleControl, Polygon, Marker, Popup, Polyline } from 'react-leaflet';
 import 'react-leaflet-markercluster/dist/styles.min.css';
+import './marker-cluster.css'
 import L from 'leaflet';
 import MarkerClusterGroup from './MarkerCluster.js';
 
@@ -22,6 +23,28 @@ const springsMarker = new L.Icon({
     iconRetinaUrl: require('../assets/springsicon.png'),
     iconSize: new L.Point(20, 20),
 });
+
+
+const createCustomObservationsClusterIcon = function (cluster) {
+    return L.divIcon({
+        html: "<div><span>" + cluster.getChildCount() + "</span></div>",
+        className: "leaflet-marker-icon marker-cluster-ssifwc marker-cluster-deepskyblue leaflet-zoom-animated leaflet-interactive",
+    });
+}
+
+const createCustomWellClusterIcon = function (cluster) {
+    return L.divIcon({
+        html: "<div><span>" + cluster.getChildCount() + "</span></div>",
+        className: "leaflet-marker-icon marker-cluster-ssifwc marker-cluster-dodgerblue leaflet-zoom-animated leaflet-interactive",
+    });
+}
+
+const createCustomSpringClusterIcon = function (cluster) {
+    return L.divIcon({
+        html: "<div><span>" + cluster.getChildCount() + "</span></div>",
+        className: "leaflet-marker-icon marker-cluster-ssifwc marker-cluster-royalblue leaflet-zoom-animated leaflet-interactive",
+    });
+}
 
 
 class MapView extends Component {
@@ -46,7 +69,7 @@ class MapView extends Component {
     })
   }
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
 
     if (props.polygons !== this.state.polygons) {
       this.setState({ polygons: props.polygons });
@@ -95,9 +118,11 @@ class MapView extends Component {
                    </Polygon>
           })
         }
-        <MarkerClusterGroup maxClusterRadius={this.state.maxClusterRadius}>
+        <MarkerClusterGroup maxClusterRadius={this.state.maxClusterRadius} iconCreateFunction={createCustomObservationsClusterIcon}>
           {
-            this.state.points.map((point, index) =>
+            this.state.points.filter(function isObservation(points) {
+                return points.label === 'epicollect';
+            }).map((point, index) =>
 
               <FieldObservation 
                         point={ point } 
@@ -107,6 +132,31 @@ class MapView extends Component {
             )
           }
         </MarkerClusterGroup>
+          <MarkerClusterGroup maxClusterRadius={this.state.maxClusterRadius} iconCreateFunction={createCustomWellClusterIcon}>
+              {
+                  this.state.points.filter(function isWell(points) {
+                      return points.label === 'wells';
+                  }).map((point, index) =>
+                      <FieldObservation
+                          point={ point }
+                          key={ index }
+                      />
+                  )
+              }
+      </MarkerClusterGroup>
+          <MarkerClusterGroup maxClusterRadius={this.state.maxClusterRadius} iconCreateFunction={createCustomSpringClusterIcon}>
+              {
+                  this.state.points.filter(function isSpring(points) {
+                      return points.label === 'springs';
+                  }).map((point, index) =>
+
+                      <FieldObservation
+                          point={ point }
+                          key={ index }
+                      />
+                  )
+              }
+          </MarkerClusterGroup>
         {
           this.state.lines.map((line, index) => {
               return <Polyline
@@ -139,11 +189,11 @@ class FieldObservation extends Component {
       label: props.point.label,
       point: props.point.point,
       version: props.point.epicollect_version,
-      icon: this.getMarker(props.point.label),
+      icon: this.getMarkerIcon(props.point.label),
     }
   }
 
-  getMarker = (label) => {
+  getMarkerIcon = (label) => {
     if (label === 'epicollect') {
         return SSIFWCmarker
     } else if (label === 'springs') {
