@@ -23,12 +23,13 @@ class GraphDrawer extends Component {
     }
   }
 
-  getData = (uuid, radius) => {
+  getData = (longitude, latitude, radius) => {
 
     return fetch("https://" + process.env.REACT_APP_API_BASE_URL +  "/dev/metrics", {
       method: 'post',
       body: JSON.stringify({
-        uuid: uuid,
+        longitude: longitude,
+          latitude: latitude,
         radius: radius
       })
     }).then(function(response) {
@@ -43,7 +44,7 @@ class GraphDrawer extends Component {
   UNSAFE_componentWillReceiveProps(props) {
 
     if (props.visible === true) {
-      this.getData(props.location.uuid, props.location.radius).then((metrics) => {
+      this.getData(props.location.longitude, props.location.latitude, props.location.radius).then((metrics) => {
 
         this.setState({
           title: props.location.label,
