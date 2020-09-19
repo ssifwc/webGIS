@@ -188,7 +188,6 @@ class FieldObservation extends Component {
       title: props.point.title,
       label: props.point.label,
       point: props.point.point,
-      version: props.point.epicollect_version,
       icon: this.getMarkerIcon(props.point.label),
     }
   }

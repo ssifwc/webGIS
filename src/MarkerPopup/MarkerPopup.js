@@ -17,7 +17,6 @@ class MarkerPopup extends Component {
       visible: props.visible,
       title: '',
       namedLocationIfKnown: '',
-      islandArea: '',
       createdAt: '',
       lastSignificantPrecipitation: '',
       safeToWork: '',
@@ -44,8 +43,7 @@ class MarkerPopup extends Component {
     return fetch("https://" + process.env.REACT_APP_API_BASE_URL +  "/dev/epicollect", {
       method: 'post',
       body: JSON.stringify({
-        uuids: [point.id],
-        version: point.version
+        uuids: [point.id]
       })
     }).then(function(response) {
       return response.json();
@@ -78,7 +76,6 @@ class MarkerPopup extends Component {
           loading: false,
           title: props.point.title,
           namedLocationIfKnown: observations[0].named_location_if_known,
-          islandArea: observations[0].island_area,
           createdAt: observations[0].created_at,
           lastSignificantPrecipitation: observations[0].last_significant_precipitation_event,
           safeToWork: observations[0].safe_to_work_at_this_location,
@@ -107,7 +104,6 @@ class MarkerPopup extends Component {
       {label: 'Water Movement', value: 'rateOfFlowQualitative'},
       {label: 'Safe to Work at this Location', value: 'safeToWork'},
       {label: 'Last Significant Precipitation Event', value: 'lastSignificantPrecipitation'},
-      {label: 'Island Area', value: 'islandArea'},
       {label: 'Comments', value: 'otherComments'},
     ]
 
