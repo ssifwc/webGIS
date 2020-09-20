@@ -53,8 +53,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'SWCK Stowell Ck inflow E2',
-                    longitude: '48.786007',
-                    latitude: '-123.437276',
+                    latitude: '48.786007',
+                    longitude: '-123.437276',
                     radius: 75
                 }
                 break;
@@ -62,8 +62,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'SWCK Stowell Ck inflow E2',
-                    longitude: '48.786007',
-                    latitude: '-123.437276',
+                    latitude: '48.786007',
+                    longitude: '-123.437276',
                     radius: 75
                 }
                 break;
@@ -71,8 +71,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'SWCK Stowell Ck Outfall',
-                    longitude: '48.770119',
-                    latitude: '-123.445071',
+                    latitude: '48.770119',
+                    longitude: '-123.445071',
                     radius: 75
                 }
                 break;
@@ -80,8 +80,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'WSCK Weston Ck outfall',
-                    longitude: '48.787567',
-                    latitude: '-123.517732',
+                    latitude: '48.787567',
+                    longitude: '-123.517732',
                     radius: 75
                 }
                 break;
@@ -89,8 +89,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'FLCK StreamSong Pond',
-                    longitude: '48.77885',
-                    latitude: '-123.48142',
+                    latitude: '48.77885',
+                    longitude: '-123.48142',
                     radius: 25
                 }
                 break;
@@ -98,8 +98,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'MYCK Monty Ck outfall',
-                    longitude: '48.759727',
-                    latitude: '-123.409329',
+                    latitude: '48.759727',
+                    longitude: '-123.409329',
                     radius: 75
                 }
                 break;
@@ -107,8 +107,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'CUCK Cusheon Ck Jarads Grove nr bridge',
-                    longitude: '48.806447',
-                    latitude: '-123.431551',
+                    latitude: '48.806447',
+                    longitude: '-123.431551',
                     radius: 75
                 }
                 break;
@@ -116,8 +116,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'WSCK Meyer Rd Ck by Property Fence',
-                    longitude: '48.791033',
-                    latitude: '-123.416038',
+                    latitude: '48.791033',
+                    longitude: '-123.416038',
                     radius: 100
                 }
                 break;
@@ -125,8 +125,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'WSCK 222 Meyer Ck 30 m from big cedar',
-                    longitude: '48.790901',
-                    latitude: '-123.41632',
+                    latitude: '48.790901',
+                    longitude: '-123.41632',
                     radius: 100
                 }
                 break;
@@ -134,8 +134,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'SWCK Stowell Lk inflow W2',
-                    longitude: '48.76981',
-                    latitude: '-123.444575',
+                    latitude: '48.76981',
+                    longitude: '-123.444575',
                     radius: 25
                 }
                 break;
@@ -143,8 +143,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'SWCK Stowell Lk inflow W1',
-                    longitude: '48.78136',
-                    latitude: '-123.446818',
+                    latitude: '48.78136',
+                    longitude: '-123.446818',
                     radius: 25
                 }
                 break;
@@ -152,8 +152,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'SWCK Stowell Lk inflow E1',
-                    longitude: '48.783368',
-                    latitude: '-123.445209',
+                    latitude: '48.783368',
+                    longitude: '-123.445209',
                     radius: 25
                 }
                 break;
@@ -161,8 +161,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: '9076 Cusheon Cove Ck at BRDG',
-                    longitude: '48.795388',
-                    latitude: '-123.397788',
+                    latitude: '48.795388',
+                    longitude: '-123.397788',
                     radius: 75
                 }
                 break;
@@ -170,8 +170,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: '9076 Cusheon Cove feeder Ck Bulman Rd at T',
-                    longitude: '48.791653',
-                    latitude: '-123.408985',
+                    latitude: '48.791653',
+                    longitude: '-123.408985',
                     radius: 75
                 }
                 break;
@@ -179,8 +179,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: '9192 E Cypress Ck',
-                    longitude: '48.846887',
-                    latitude: '-123.503006',
+                    latitude: '48.846887',
+                    longitude: '-123.503006',
                     radius: 50
                 }
                 break;
@@ -188,8 +188,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: '9192 W Cypress Ck',
-                    longitude: '48.847739',
-                    latitude: '-123.503564',
+                    latitude: '48.847739',
+                    longitude: '-123.503564',
                     radius: 50
                 }
                 break;
@@ -197,8 +197,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'FLCK Mereside Ck 1 Weir W of trail',
-                    longitude: '48.794305',
-                    latitude: '-123.476055',
+                    latitude: '48.794305',
+                    longitude: '-123.476055',
                     radius: 75
                 }
                 break;
@@ -206,8 +206,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'OLCK Purdy Ck at 570 Beddis Road',
-                    longitude: '48.829873',
-                    latitude: '-123.472036',
+                    latitude: '48.829873',
+                    longitude: '-123.472036',
                     radius: 75
                 }
                 break;
@@ -215,8 +215,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'OLCK Old Lowther Ck at sea outfall',
-                    longitude: '48.834442',
-                    latitude: '-123.470704',
+                    latitude: '48.834442',
+                    longitude: '-123.470704',
                     radius: 75
                 }
                 break;
@@ -224,8 +224,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'MWCK Mowhinna Ck Beddis Rd CMP',
-                    longitude: '48.84017',
-                    latitude: '-123.4894',
+                    latitude: '48.84017',
+                    longitude: '-123.4894',
                     radius: 75
                 }
                 break;
@@ -233,8 +233,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'SHCK Turpel Ck at Rainbow Rd Xing',
-                    longitude: '48.856463',
-                    latitude: '-123.531999',
+                    latitude: '48.856463',
+                    longitude: '-123.531999',
                     radius: 75
                 }
                 break;
@@ -242,8 +242,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'SHCK Turpel Ck 5m abv Sharpe Ck 221 Booth',
-                    longitude: '48.859669',
-                    latitude: '-123.530377',
+                    latitude: '48.859669',
+                    longitude: '-123.530377',
                     radius: 25
                 }
                 break;
@@ -251,8 +251,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: 'SHCK Sharpe Ck BLW bridge 221 Booth',
-                    longitude: '48.859604',
-                    latitude: '-123.530536',
+                    latitude: '48.859604',
+                    longitude: '-123.530536',
                     radius: 25
                 }
                 break;
@@ -260,8 +260,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'CENTRAL',
                     label: '9119 Grandmother tree Ck on path',
-                    longitude: '48.764843',
-                    latitude: '-123.394868',
+                    latitude: '48.764843',
+                    longitude: '-123.394868',
                     radius: 75
                 }
                 break;
@@ -269,8 +269,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: 'MKCK McFadden Ck at RW CMP',
-                    longitude: '48.925924',
-                    latitude: '-123.55936',
+                    latitude: '48.925924',
+                    longitude: '-123.55936',
                     radius: 75
                 }
                 break;
@@ -278,8 +278,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: 'BLCK Bullock Ck Eagle Ridge Rd',
-                    longitude: '48.862126',
-                    latitude: '-123.485353',
+                    latitude: '48.862126',
+                    longitude: '-123.485353',
                     radius: 75
                 }
                 break;
@@ -287,8 +287,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: 'MNCK CMP at Robinson Rd',
-                    longitude: '48.880866',
-                    latitude: '-123.508669',
+                    latitude: '48.880866',
+                    longitude: '-123.508669',
                     radius: 75
                 }
                 break;
@@ -296,8 +296,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: 'MNCK above wetlands',
-                    longitude: '48.884175',
-                    latitude: '-123.515868',
+                    latitude: '48.884175',
+                    longitude: '-123.515868',
                     radius: 75
                 }
                 break;
@@ -305,8 +305,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: 'WSCK Weston Lake Ck Inflow E1',
-                    longitude: '48.788028',
-                    latitude: '-123.420991',
+                    latitude: '48.788028',
+                    longitude: '-123.420991',
                     radius: 75
                 }
                 break;
@@ -314,8 +314,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: 'WLBK Walkers Brook Site 2',
-                    longitude: '48.886972',
-                    latitude: '-123.504249',
+                    latitude: '48.886972',
+                    longitude: '-123.504249',
                     radius: 75
                 }
                 break;
@@ -323,8 +323,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: '9178 Hudson Pt Ck Outfall',
-                    longitude: '48.917328',
-                    latitude: '-123.54324',
+                    latitude: '48.917328',
+                    longitude: '-123.54324',
                     radius: 75
                 }
                 break;
@@ -332,8 +332,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: '2017 Madrona Ck Wier',
-                    longitude: '48.864489',
-                    latitude: '-123.498673',
+                    latitude: '48.864489',
+                    longitude: '-123.498673',
                     radius: 75
                 }
                 break;
@@ -341,8 +341,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: '2017 Madrona Ck upper Ganges CMP',
-                    longitude: '48.870755',
-                    latitude: '-123.517515',
+                    latitude: '48.870755',
+                    longitude: '-123.517515',
                     radius: 75
                 }
                 break;
@@ -350,8 +350,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: '2017 Madrona Ck Ram Spring',
-                    longitude: '48.867921',
-                    latitude: '-123.511868',
+                    latitude: '48.867921',
+                    longitude: '-123.511868',
                     radius: 75
                 }
                 break;
@@ -359,8 +359,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: '2017 Madrona Ck Nicks Pond',
-                    longitude: '48.871523',
-                    latitude: '-123.517506',
+                    latitude: '48.871523',
+                    longitude: '-123.517506',
                     radius: 75
                 }
                 break;
@@ -368,8 +368,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: '2017 Madrona Ck Churchill Trail',
-                    longitude: '48.863435',
-                    latitude: '-123.497124',
+                    latitude: '48.863435',
+                    longitude: '-123.497124',
                     radius: 75
                 }
                 break;
@@ -377,8 +377,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: '9073 Mt Park Dr Ck junction',
-                    longitude: '48.886796',
-                    latitude: '-123.572161',
+                    latitude: '48.886796',
+                    longitude: '-123.572161',
                     radius: 75
                 }
                 break;
@@ -386,8 +386,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'NORTH',
                     label: '9071 North End Rd Waterslide',
-                    longitude: '48.932066',
-                    latitude: '-123.57892',
+                    latitude: '48.932066',
+                    longitude: '-123.57892',
                     radius: 75
                 }
                 break;
@@ -395,8 +395,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'GDCK Geralds Ck outfall',
-                    longitude: '48.759932',
-                    latitude: '-123.451634',
+                    latitude: '48.759932',
+                    longitude: '-123.451634',
                     radius: 75
                 }
                 break;
@@ -404,8 +404,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'FNCK FernCreek CMP outfall',
-                    longitude: '48.757833',
-                    latitude: '-123.449985',
+                    latitude: '48.757833',
+                    longitude: '-123.449985',
                     radius: 75
                 }
                 break;
@@ -413,8 +413,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'LLCK Larlow Ck outfall aka Grants Corner Ck',
-                    longitude: '48.753928',
-                    latitude: '-123.443965',
+                    latitude: '48.753928',
+                    longitude: '-123.443965',
                     radius: 125
                 }
                 break;
@@ -422,8 +422,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'RUAL Ruby Alton Ck outfall',
-                    longitude: '48.75163',
-                    latitude: '-123.442168',
+                    latitude: '48.75163',
+                    longitude: '-123.442168',
                     radius: 75
                 }
                 break;
@@ -431,8 +431,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'XWQW Site 2W totem Ck CMP',
-                    longitude: '48.787995',
-                    latitude: '-123.517422',
+                    latitude: '48.787995',
+                    longitude: '-123.517422',
                     radius: 43.43
                 }
                 break;
@@ -440,8 +440,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'XWQW Site 4E totem Ck big CMP Ck N',
-                    longitude: '48.787917',
-                    latitude: '-123.517458',
+                    latitude: '48.787917',
+                    longitude: '-123.517458',
                     radius: 28.42
                 }
                 break;
@@ -449,8 +449,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'XWQW Site 1 bridge Ck XWP',
-                    longitude: '48.790177',
-                    latitude: '-123.51706',
+                    latitude: '48.790177',
+                    longitude: '-123.51706',
                     radius: 25
                 }
                 break;
@@ -458,8 +458,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'XWQW Site 4E totem Ck big CMP Ck S',
-                    longitude: '48.78785',
-                    latitude: '-123.517436',
+                    latitude: '48.78785',
+                    longitude: '-123.517436',
                     radius: 25
                 }
                 break;
@@ -467,8 +467,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'XWQW Lee Ck at CMP and parking RW',
-                    longitude: '48.790548',
-                    latitude: '-123.505056',
+                    latitude: '48.790548',
+                    longitude: '-123.505056',
                     radius: 100
                 }
                 break;
@@ -476,8 +476,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'XWQW Eagle Ck CMP seen at trail trap 9',
-                    longitude: '48.790047',
-                    latitude: '-123.510743',
+                    latitude: '48.790047',
+                    longitude: '-123.510743',
                     radius: 50
                 }
                 break;
@@ -485,8 +485,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'XWQW Lee Ck Fishtrap 10 site weir',
-                    longitude: '48.788832',
-                    latitude: '-123.513556',
+                    latitude: '48.788832',
+                    longitude: '-123.513556',
                     radius: 25
                 }
                 break;
@@ -494,8 +494,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: '9075 Bridge Ck pt III d/s main Barn trail CMP',
-                    longitude: '48.790687',
-                    latitude: '-123.514588',
+                    latitude: '48.790687',
+                    longitude: '-123.514588',
                     radius: 10
                 }
                 break;
@@ -503,8 +503,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'FLCK StreamSong Fulford Ck',
-                    longitude: '48.778508',
-                    latitude: '-123.481219',
+                    latitude: '48.778508',
+                    longitude: '-123.481219',
                     radius: 27
                 }
                 break;
@@ -512,8 +512,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'FLCK StreamSong Jones Ck',
-                    longitude: '48.777596',
-                    latitude: '-123.479828',
+                    latitude: '48.777596',
+                    longitude: '-123.479828',
                     radius: 50
                 }
                 break;
@@ -521,8 +521,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'SLCK Soule Ck aka Fulford Ck spur',
-                    longitude: '48.771988',
-                    latitude: '-123.462698',
+                    latitude: '48.771988',
+                    longitude: '-123.462698',
                     radius: 75
                 }
                 break;
@@ -530,8 +530,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'RUAL 971 Isabella Pt Rd CMP',
-                    longitude: '48.729975',
-                    latitude: '-123.437131',
+                    latitude: '48.729975',
+                    longitude: '-123.437131',
                     radius: 100
                 }
                 break;
@@ -539,8 +539,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'RUAL Holmes Ck',
-                    longitude: '48.732432',
-                    latitude: '-123.428808',
+                    latitude: '48.732432',
+                    longitude: '-123.428808',
                     radius: 75
                 }
                 break;
@@ -548,8 +548,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'RUAL 971 Isabella Pt Rd well',
-                    longitude: '48.737939',
-                    latitude: '-123.436593',
+                    latitude: '48.737939',
+                    longitude: '-123.436593',
                     radius: 100
                 }
                 break;
@@ -557,8 +557,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: '2112 W Ribbon Ck at Mt Rd',
-                    longitude: '48.73136',
-                    latitude: '-123.459551',
+                    latitude: '48.73136',
+                    longitude: '-123.459551',
                     radius: 75
                 }
                 break;
@@ -566,8 +566,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: '2112 W Ribbon Ck abv falls',
-                    longitude: '48.728592',
-                    latitude: '-123.452059',
+                    latitude: '48.728592',
+                    longitude: '-123.452059',
                     radius: 10
                 }
                 break;
@@ -575,8 +575,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: '2112 S Canyon Ck Gorge 2 m D/S Ribbon Falls',
-                    longitude: '48.72866',
-                    latitude: '-123.451618',
+                    latitude: '48.72866',
+                    longitude: '-123.451618',
                     radius: 10
                 }
                 break;
@@ -584,8 +584,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: '2112 S Canyon Ck 100 m U/S outfall',
-                    longitude: '48.727365',
-                    latitude: '-123.450811',
+                    latitude: '48.727365',
+                    longitude: '-123.450811',
                     radius: 10
                 }
                 break;
@@ -593,8 +593,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: '2112 NW Cascade Ck at Mt Rd',
-                    longitude: '48.734322',
-                    latitude: '-123.454565',
+                    latitude: '48.734322',
+                    longitude: '-123.454565',
                     radius: 10
                 }
                 break;
@@ -602,8 +602,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: '2112 NW Cascade Ck abv falls',
-                    longitude: '48.733665',
-                    latitude: '-123.458071',
+                    latitude: '48.733665',
+                    longitude: '-123.458071',
                     radius: 10
                 }
                 break;
@@ -611,8 +611,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: '2112 N Canyon Ck U/S Ribbon Falls',
-                    longitude: '48.728752',
-                    latitude: '-123.45163',
+                    latitude: '48.728752',
+                    longitude: '-123.45163',
                     radius: 10
                 }
                 break;
@@ -620,8 +620,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: '2112 N Canyon Ck at Mt Rd 10 m U/S  Mtg Cascade Ck',
-                    longitude: '48.734322',
-                    latitude: '-123.454565',
+                    latitude: '48.734322',
+                    longitude: '-123.454565',
                     radius: 10
                 }
                 break;
@@ -629,8 +629,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'TRCK Mill Farm Ephemeral Creek 2',
-                    longitude: '48.758388',
-                    latitude: '-123.528811',
+                    latitude: '48.758388',
+                    longitude: '-123.528811',
                     radius: 10
                 }
                 break;
@@ -638,8 +638,8 @@ class LayerMenu extends Component {
                 location = {
                     area: 'SOUTH',
                     label: 'TRCK Mill Farm Tau Hang Creek area ephemeral creek 1',
-                    longitude: '48.756628',
-                    latitude: '-123.528234',
+                    latitude: '48.756628',
+                    longitude: '-123.528234',
                     radius: 10
                 }
                 break;
