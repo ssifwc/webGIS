@@ -77,6 +77,8 @@ class MarkerPopup extends Component {
           title: props.point.title,
           namedLocationIfKnown: observations[0].named_location_if_known,
           createdAt: observations[0].created_at,
+          monitorDate: observations[0].monitor_date,
+          monitorTime: observations[0].monitor_time,
           lastSignificantPrecipitation: observations[0].last_significant_precipitation_event,
           safeToWork: observations[0].safe_to_work_at_this_location,
           nameOrInitials: observations[0].name_initials_or_nickname,
@@ -120,7 +122,7 @@ class MarkerPopup extends Component {
 
               <Skeleton active loading={this.state.loading}>
                 <h2>{this.state.title}</h2>
-                <Moment date={this.state.createdAt} format={"DD MMM YYYY  hh:mm a"} />
+                <span>Recording Date: {this.state.monitorDate} {this.state.monitorTime}</span>
               </Skeleton>
 
               <Card>
