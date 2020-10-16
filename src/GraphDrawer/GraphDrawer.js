@@ -79,7 +79,8 @@ class GraphDrawer extends Component {
                 <LineChart width={450} height={250} data={this.state.temperature}>
                     <Line type="monotone" dataKey="value" stroke="#DB4437"/>
                     <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
-                    <YAxis label={{value: "Water Temperature (deg C)", angle: -90, position: 'insideBottomLeft'}}/>
+                    <YAxis label={{value: "Water Temperature (deg C)", angle: -90, position: 'insideBottomLeft'}}
+                           domain={[0, 25]} allowDataOverflow={true} />
                     <CartesianGrid strokeDasharray="3 3"/>
                     <Tooltip/>
                 </LineChart>
@@ -88,7 +89,7 @@ class GraphDrawer extends Component {
                     <Line type="monotone" dataKey="value" stroke="#4285F4"/>
                     <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
                     <YAxis label={{value: "Conductivity (µS/cm)", angle: -90, position: 'insideBottomLeft'}}
-                           domain={[0, 800]}/>
+                           domain={[50, 500]}  allowDataOverflow={true} />
                     <CartesianGrid strokeDasharray="3 3"/>
                     <Tooltip/>
                 </LineChart>
@@ -96,11 +97,10 @@ class GraphDrawer extends Component {
                 <LineChart width={450} height={250} data={this.state.ph}>
                     <Line type="monotone" dataKey="value" stroke="#0F9D58"/>
                     <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
-                    <YAxis label={{value: "pH", angle: -90, position: 'insideBottomLeft'}} domain={[1, 10]}/>
+                    <YAxis label={{value: "pH", angle: -90, position: 'insideBottomLeft'}} domain={[6, 9]} allowDataOverflow={true}/>
                     <CartesianGrid strokeDasharray="3 3"/>
                     <Tooltip/>
                 </LineChart>
-
 
                 <LineChart width={450} height={250} data={this.state.flow_rate}>
                     <Line type="monotone" dataKey="value" stroke="#add8e6"/>
@@ -122,7 +122,7 @@ class GraphDrawer extends Component {
                     <Line type="monotone" dataKey="value" stroke="#0F9D58"/>
                     <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
                     <YAxis label={{value: "Dissolved Oxygen (mg/L)", angle: -90, position: 'insideBottomLeft'}}
-                           domain={[1, 15]}/>
+                           domain={[1, 15]} allowDataOverflow={true}/>
                     <CartesianGrid strokeDasharray="3 3"/>
                     <Tooltip/>
                 </LineChart>
@@ -131,7 +131,7 @@ class GraphDrawer extends Component {
                     <Line type="monotone" dataKey="value" stroke="#32a852"/>
                     <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
                     <YAxis label={{value: "Alkalinity (ppm)", angle: -90, position: 'insideBottomLeft'}}
-                           domain={[0, 300]}/>
+                           domain={[0, 300]} allowDataOverflow={true}/>
                     <CartesianGrid strokeDasharray="3 3"/>
                     <Tooltip/>
                 </LineChart>
@@ -140,7 +140,7 @@ class GraphDrawer extends Component {
                     <Line type="monotone" dataKey="value" stroke="#32a852"/>
                     <XAxis dataKey="name" tickFormatter={this.formatXAxis}/>
                     <YAxis label={{value: "Hardness (ppm)", angle: -90, position: 'insideBottomLeft'}}
-                           domain={[0, 180]}/>
+                           domain={[0, 180]} allowDataOverflow={true}/>
                     <CartesianGrid strokeDasharray="3 3"/>
                     <Tooltip/>
                 </LineChart>
