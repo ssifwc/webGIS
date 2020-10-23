@@ -472,12 +472,12 @@ class App extends Component {
 	          onCancel={this.handleOk}
 	          footer={[null]}
 	        >
-	          <p>This is home page of the Water Protection Societies (WPS) Salt Spring Island (SSI),  FreshWater Catalogue(FWC) project.
+	          <p>This is home page of the Water Protection Society's (WPS) Salt Spring Island (SSI) FreshWater Catalogue(FWC) project.
 				This website provides a "public facing” view of the freshwater data that has been collected by the SSIFWC project Watershed
 				Stewardship Groups. For further information on the SSIFWC project, or to get involved, please drop an email to
 				<a href="mailto:ssifwc@gmail.com?Subject=Hello" target="_top"> ssifwc@gmail.com</a>.
 			  </p>
-			  <p>This website was designed and built by Barney Gordon</p>
+			  <p>This website was designed and built by Barney Gordon and Joel</p>
 	        </Modal>
 
 	        <Layout>
@@ -485,9 +485,9 @@ class App extends Component {
 		          	<div className="logo">
 		          		<img src="logo-circle.png" alt={''}/>
 		          	</div>
-		          	<span style={{'display': 'flex', "alignItems": "center", 'flex': '1', 'marginLeft': '100px'}}>
+		          	<span style={{'display': 'flex', "alignItems": "center", 'flex': '1', 'marginLeft': '45px'}}>
 			           	<h1 className="title">SSIFWC</h1>
-			           	<h3 className="title" style={{'marginLeft': '50px'}}>Salt Spring Island FreshWater Catalogue</h3>
+						<h3 className="title" style={{'marginLeft': '40px'}}>Salt Spring Island FreshWater Catalogue, <i>a Water Preservation Society project</i></h3>
 		           	</span>
 		          	<Button type="primary" shape="circle" icon={<InfoOutlined />} size={'large'} onClick={this.showModal} />
 		        </Header>
