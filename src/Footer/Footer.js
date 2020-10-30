@@ -23,7 +23,7 @@ class PageFooter extends Component {
                 <Button type="primary" shape="circle" size={'large'} href={'https://www.facebook.com/groups/SSIFWCWSG/invited/'}>
                     <FacebookFilled/>
                 </Button>
-                <Button type="primary" shape="circle" size={'large'} href={'https://drive.google.com/drive/u/0/my-drive'}>
+              <Button type="primary" shape="circle" size={'large'} href={'https://sites.google.com/view/freshwater-catalogue/home'}>
                     <GoogleCircleFilled/>
                 </Button>
                 <Button type="primary" shape="circle" size={'large'} href={'http://www.ssiwaterpreservationsociety.ca'}>
