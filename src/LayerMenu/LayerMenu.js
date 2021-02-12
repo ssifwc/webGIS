@@ -643,7 +643,15 @@ class LayerMenu extends Component {
                     radius: 10
                 }
                 break;
-
+            case 'location66':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'WSCK Weston Lake Creek Inflow E1',
+                    latitude: '48.788005',
+                    longitude: '-123.421094',
+                    radius: 75
+                }
+                break;
 
         }
 
@@ -814,6 +822,7 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location8'}>WSCK 222 Meyer Ck 30 m from big cedar</Menu.Item>
                             <Menu.Item key={'location7'}>WSCK Meyer Rd Ck by Property Fence</Menu.Item>
                             <Menu.Item key={'location3'}>WSCK Weston Ck outfall</Menu.Item>
+                            <Menu.Item key={'location66'}>WSCK Weston Lake Creek Inflow E1</Menu.Item>
                         </SubMenu>
 
                         <SubMenu title={<span><AreaChartOutlined/><span>South</span></span>}>
