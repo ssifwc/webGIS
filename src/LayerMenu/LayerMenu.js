@@ -652,6 +652,51 @@ class LayerMenu extends Component {
                     radius: 75
                 }
                 break;
+            case 'location67':
+                            location = {
+                                area: 'CENTRAL',
+                                label: 'FLCK Ford Lk inflw Garner Ck 500m up Garner Rd',
+                                latitude: '48.805856',
+                                longitude: '-123.484819',
+                                radius: 75
+                            }
+                            break;
+            case 'location68':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK Ford Lk inflw NW1 Ck u/s NW spur',
+                    latitude: '48.810246',
+                    longitude: '-123.491239',
+                    radius: 75
+                }
+                break;
+            case 'location69':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK Ford Lk inflw NW1 Ck Dukes Rd Nr F/G Rd CMP',
+                    latitude: '48.8091',
+                    longitude: '-123.479239',
+                    radius: 75
+                }
+                break;
+            case 'location70':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK Beaver Pd inflw N Ck 1st CMP d/s Kitchen Rd',
+                    latitude: '48.805772',
+                    longitude: '-123.467919',
+                    radius: 75
+                }
+                break;
+            case 'location71':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK Ford Lk Outfall u/s CMP',
+                    latitude: '48.795362',
+                    longitude: '-123.478446',
+                    radius: 75
+                }
+                break;
 
         }
 
@@ -823,6 +868,11 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location7'}>WSCK Meyer Rd Ck by Property Fence</Menu.Item>
                             <Menu.Item key={'location3'}>WSCK Weston Ck outfall</Menu.Item>
                             <Menu.Item key={'location66'}>WSCK Weston Lake Creek Inflow E1</Menu.Item>
+                            <Menu.Item key={'location67'}>FLCK Ford Lk inflw Garner Ck 500m up Garner Rd</Menu.Item>
+                            <Menu.Item key={'location68'}>FLCK Ford Lk inflw NW1 Ck u/s NW spur</Menu.Item>
+                            <Menu.Item key={'location69'}>FLCK Ford Lk inflw NW1 Ck Dukes Rd Nr F/G Rd CMP</Menu.Item>
+                            <Menu.Item key={'location70'}>FLCK Beaver Pd inflw N Ck 1st CMP d/s Kitchen Rd</Menu.Item>
+                            <Menu.Item key={'location71'}>FLCK Ford Lk Outfall u/s CMP</Menu.Item>
                         </SubMenu>
 
                         <SubMenu title={<span><AreaChartOutlined/><span>South</span></span>}>
