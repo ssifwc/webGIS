@@ -445,15 +445,6 @@ class LayerMenu extends Component {
                     radius: 28.42
                 }
                 break;
-            case 'location44':
-                location = {
-                    area: 'SOUTH',
-                    label: 'XWQW Site 1 bridge Ck XWP',
-                    latitude: '48.790177',
-                    longitude: '-123.51706',
-                    radius: 25
-                }
-                break;
             case 'location45':
                 location = {
                     area: 'SOUTH',
@@ -488,15 +479,6 @@ class LayerMenu extends Component {
                     latitude: '48.788832',
                     longitude: '-123.513556',
                     radius: 25
-                }
-                break;
-            case 'location49':
-                location = {
-                    area: 'SOUTH',
-                    label: '9075 Bridge Ck pt III d/s main Barn trail CMP',
-                    latitude: '48.790687',
-                    longitude: '-123.514588',
-                    radius: 10
                 }
                 break;
             case 'location50':
@@ -556,73 +538,64 @@ class LayerMenu extends Component {
             case 'location56':
                 location = {
                     area: 'SOUTH',
-                    label: '2112 W Ribbon Ck at Mt Rd',
-                    latitude: '48.73136',
-                    longitude: '-123.459551',
+                    label: '2112 NW Cloud Ck at Canyon Ck',
+                    latitude: '48.736769',
+                    longitude: '-123.456947',
                     radius: 75
                 }
                 break;
             case 'location57':
                 location = {
                     area: 'SOUTH',
-                    label: '2112 W Ribbon Ck abv falls',
-                    latitude: '48.728592',
-                    longitude: '-123.452059',
-                    radius: 10
+                    label: '2112 NW Cascade Ck abv Mt Rd waterfall',
+                    latitude: '48.733665',
+                    longitude: '-123.458071',
+                    radius: 75
                 }
                 break;
             case 'location58':
                 location = {
                     area: 'SOUTH',
-                    label: '2112 S Canyon Ck Gorge 2 m D/S Ribbon Falls',
-                    latitude: '48.72866',
-                    longitude: '-123.451618',
-                    radius: 10
+                    label: '2112 Ribbon Ck abv Falls',
+                    latitude: '48.728592',
+                    longitude: '-123.452059',
+                    radius: 75
                 }
                 break;
             case 'location59':
                 location = {
                     area: 'SOUTH',
-                    label: '2112 S Canyon Ck 100 m U/S outfall',
-                    latitude: '48.727365',
-                    longitude: '-123.450811',
-                    radius: 10
+                    label: '2112 N Canyon Ck 100m U/S Mt Rd',
+                    latitude: '48.736127',
+                    longitude: '123.455508',
+                    radius: 75
                 }
                 break;
             case 'location60':
                 location = {
                     area: 'SOUTH',
-                    label: '2112 NW Cascade Ck at Mt Rd',
-                    latitude: '48.734322',
-                    longitude: '-123.454565',
-                    radius: 10
+                    label: '2112 S Canyon Ck 200 m U/S from outfall',
+                    latitude: '48.736684',
+                    longitude: '-123.455457',
+                    radius: 75
                 }
                 break;
             case 'location61':
                 location = {
                     area: 'SOUTH',
-                    label: '2112 NW Cascade Ck abv falls',
-                    latitude: '48.733665',
-                    longitude: '-123.458071',
-                    radius: 10
+                    label: '2112 NE Coralroot Ck at Canyon Ck',
+                    latitude: '48.736357',
+                    longitude: '-123.455425',
+                    radius: 75
                 }
                 break;
             case 'location62':
                 location = {
                     area: 'SOUTH',
-                    label: '2112 N Canyon Ck U/S Ribbon Falls',
-                    latitude: '48.728752',
-                    longitude: '-123.45163',
-                    radius: 10
-                }
-                break;
-            case 'location63':
-                location = {
-                    area: 'SOUTH',
-                    label: '2112 N Canyon Ck at Mt Rd 10 m U/S  Mtg Cascade Ck',
-                    latitude: '48.734322',
-                    longitude: '-123.454565',
-                    radius: 10
+                    label: '2112 E Cabbage Ck at Canyon Ck',
+                    latitude: '48.730533',
+                    longitude: '-123.451548',
+                    radius: 75
                 }
                 break;
             case 'location64':
@@ -643,6 +616,24 @@ class LayerMenu extends Component {
                     radius: 10
                 }
                 break;
+           case 'location72':
+               location = {
+                   area: 'SOUTH',
+                   label: '8509 Chutes Ck at Mt Rd',
+                   latitude: '48.72605',
+                   longitude: '-123.46482',
+                   radius: 75
+               }
+               break;
+           case 'location73':
+               location = {
+                   area: 'SOUTH',
+                   label: '8509 Chutes Ck at outfall',
+                   latitude: '48.724015',
+                   longitude: '-123.457589',
+                   radius: 75
+               }
+               break;
             case 'location66':
                 location = {
                     area: 'CENTRAL',
@@ -697,7 +688,24 @@ class LayerMenu extends Component {
                     radius: 75
                 }
                 break;
-
+            case 'location44':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'XWQW Site 1 bridge Ck XWP',
+                    latitude: '48.790177',
+                    longitude: '-123.51706',
+                    radius: 75
+                }
+                break;
+            case 'location49':
+                location = {
+                    area: 'SOUTH',
+                    label: '9075 Bridge Ck pt III d/s main Barn trail CMP',
+                    latitude: '48.790687',
+                    longitude: '-123.514588',
+                    radius: 10
+                }
+                break;
         }
 
         this.setState({selectLocation: e.key})
@@ -873,18 +881,18 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location69'}>FLCK Ford Lk inflw NW1 Ck Dukes Rd Nr F/G Rd CMP</Menu.Item>
                             <Menu.Item key={'location70'}>FLCK Beaver Pd inflw N Ck 1st CMP d/s Kitchen Rd</Menu.Item>
                             <Menu.Item key={'location71'}>FLCK Ford Lk Outfall u/s CMP</Menu.Item>
+                            <Menu.Item key={'location44'}>XWQW Site 1 bridge Ck XWP</Menu.Item>
+                            <Menu.Item key={'location49'}>9075 Bridge Ck pt III d/s main Barn trail CMP</Menu.Item>
                         </SubMenu>
 
                         <SubMenu title={<span><AreaChartOutlined/><span>South</span></span>}>
-                            <Menu.Item key={'location62'}>2112 N Canyon Ck U/S Ribbon Falls</Menu.Item>
-                            <Menu.Item key={'location63'}>2112 N Canyon Ck at Mt Rd 10 m U/S  Mtg Cascade Ck</Menu.Item>
-                            <Menu.Item key={'location60'}>2112 NW Cascade Ck at Mt Rd</Menu.Item>
-                            <Menu.Item key={'location61'}>2112 NW Cascade Ck abv falls</Menu.Item>
-                            <Menu.Item key={'location58'}>2112 S Canyon Ck Gorge 2 m D/S Ribbon Falls</Menu.Item>
-                            <Menu.Item key={'location59'}>2112 S Canyon Ck 100 m U/S outfall</Menu.Item>
-                            <Menu.Item key={'location56'}>2112 W Ribbon Ck at Mt Rd</Menu.Item>
-                            <Menu.Item key={'location57'}>2112 W Ribbon Ck abv falls</Menu.Item>
-                            <Menu.Item key={'location49'}>9075 Bridge Ck pt III d/s main Barn trail CMP</Menu.Item>
+                            <Menu.Item key={'location62'}>2112 E Cabbage Ck at Canyon Ck</Menu.Item>
+                            <Menu.Item key={'location61'}>2112 NE Coralroot Ck at Canyon Ck</Menu.Item>
+                            <Menu.Item key={'location60'}>2112 S Canyon Ck 200 m U/S from outfall</Menu.Item>
+                            <Menu.Item key={'location59'}>2112 N Canyon Ck 100m U/S Mt Rd</Menu.Item>
+                            <Menu.Item key={'location58'}>2112 Ribbon Ck abv Falls</Menu.Item>
+                            <Menu.Item key={'location57'}>2112 NW Cascade Ck abv Mt Rd waterfall</Menu.Item>
+                            <Menu.Item key={'location56'}>2112 NW Cloud Ck at Canyon Ck</Menu.Item>
                             <Menu.Item key={'location39'}>FNCK FernCreek CMP outfall</Menu.Item>
                             <Menu.Item key={'location50'}>FLCK StreamSong Fulford Ck</Menu.Item>
                             <Menu.Item key={'location51'}>FLCK StreamSong Jones Ck</Menu.Item>
@@ -902,8 +910,12 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location48'}>XWQW Lee Ck Fishtrap 10 site weir</Menu.Item>
                             <Menu.Item key={'location42'}>XWQW Site 2W totem Ck CMP</Menu.Item>
                             <Menu.Item key={'location43'}>XWQW Site 4E totem Ck big CMP Ck N</Menu.Item>
-                            <Menu.Item key={'location44'}>XWQW Site 1 bridge Ck XWP</Menu.Item>
                             <Menu.Item key={'location45'}>XWQW Site 4E totem Ck big CMP Ck S</Menu.Item>
+                            <Menu.Item key={'location72'}>8509 Chutes Ck at Mt Rd</Menu.Item>
+                            <Menu.Item key={'location73'}>8509 Chutes Ck at outfall</Menu.Item>
+                        </SubMenu>
+
+                        <SubMenu title={<span><AreaChartOutlined/><span>FWC Wells</span></span>}>
                         </SubMenu>
 
                     </SubMenu>
