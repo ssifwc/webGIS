@@ -706,6 +706,150 @@ class LayerMenu extends Component {
                     radius: 10
                 }
                 break;
+
+
+            //Starting Well charts here
+            //wn = 'wells north' --> this way it is easier to reorder certain submenu's (for now at least..).
+
+            case 'location_wn1':
+                location = {
+                    area: 'NORTH',
+                    label: 'WLBK inland Walkers Hook Rd Deep Well 1',
+                    latitude: '48.886674',
+                    longitude: '-123.506811',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wn2':
+                location = {
+                    area: 'NORTH',
+                    label: 'MFCK mid North End Rd. Deep well',
+                    latitude: '48.91952',
+                    longitude: '-123.55993',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wn3':
+                location = {
+                    area: 'NORTH',
+                    label: 'SHCK mid Booth Canal Rd Shallow Well',
+                    latitude: '48.85970',
+                    longitude: '-123.53039',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wc1':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'WSCK 222 Meyer Rd Deep Drill Well',
+                    latitude: '48.793476',
+                    longitude: '-123.418425',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wc2':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'WSCK Meyer Road Dug Well',
+                    latitude: '48.792475',
+                    longitude: '-123.418219',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wc3':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'WSCK 104 Bulman Rd Deep Well',
+                    latitude: '48.786111',
+                    longitude: '-123.415555',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wc4':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'WSCK 112 Bulman Rd Deep Well',
+                    latitude: '48.786666',
+                    longitude: '-123.414722',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wc5':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'MFCK mid North End Rd. Deep well',
+                    latitude: '48.919616',
+                    longitude: '-123.560023',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wc6':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK mid Kitchen Rd Deep Well',
+                    latitude: '48.808537',
+                    longitude: '-123.473427',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wc7':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK 177 Dukes Road Deep Well',
+                    latitude: '48.811987',
+                    longitude: '-123.486396',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wc8':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK Streamsong House Well',
+                    latitude: '48.779133',
+                    longitude: '-123.480451',
+                    radius: 50
+                }
+                break;
+
+            case 'location_wc9':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK 129 Burgoyne Bay Rd. Shallow Well',
+                    latitude: '48.78273',
+                    longitude: '-123.49776',
+                    radius: 50
+                }
+                break;
+
+            case 'location_ws1':
+                location = {
+                    area: 'SOUTH',
+                    label: 'RUAL 971 Isabella Pt Rd well',
+                    latitude: '48.737702',
+                    longitude: '-123.435616',
+                    radius: 50
+                }
+                break;
+
+            case 'location_ws2':
+                location = {
+                    area: 'SOUTH',
+                    label: 'RUAL Roland Rd Shallow Well',
+                    latitude: '48.745076',
+                    longitude: '-123.433713',
+                    radius: 50
+                }
+                break;
         }
 
         this.setState({selectLocation: e.key})
@@ -829,7 +973,7 @@ class LayerMenu extends Component {
                         title={
                             <span>
                       <AreaChartOutlined/>
-                      <span>Charts</span>
+                      <span>Charts - Surface</span>
                     </span>
                         }
                     >
@@ -914,12 +1058,54 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location72'}>8509 Chutes Ck at Mt Rd</Menu.Item>
                             <Menu.Item key={'location73'}>8509 Chutes Ck at outfall</Menu.Item>
                         </SubMenu>
+                    </SubMenu>
+                </Menu>
 
-                        <SubMenu title={<span><AreaChartOutlined/><span>FWC Wells</span></span>}>
+                <Menu
+                    theme="dark"
+                    mode="inline"
+                    onClick={this.selectLocation}
+                    selectedKeys={[this.state.selectedLocation]}
+                >
+                    <SubMenu
+                        selectable={true}
+                        key="3"
+                        title={
+                            <span>
+                      <AreaChartOutlined/>
+                      <span>Charts - Wells</span>
+                    </span>
+                        }
+                    >
+                        <SubMenu title={<span><AreaChartOutlined/><span>North</span></span>}>
+                            <Menu.Item key={'location_wn1'}>WLBK inland Walkers Hook Rd Deep Well 1</Menu.Item>
+                            <Menu.Item key={'location_wn2'}>MFCK mid North End Rd. Deep well</Menu.Item>
+                            <Menu.Item key={'location_wn3'}>SHCK mid Booth Canal Rd Shallow Well</Menu.Item>
+
+                        </SubMenu>
+
+                        <SubMenu title={<span><AreaChartOutlined/><span>Central</span></span>}>
+                            <Menu.Item key={'location_wc1'}>WSCK 222 Meyer Rd Deep Drill Well</Menu.Item>
+                            <Menu.Item key={'location_wc2'}>WSCK Meyer Road Dug Well</Menu.Item>
+                            <Menu.Item key={'location_wc3'}>WSCK 104 Bulman Rd Deep Well</Menu.Item>
+                            <Menu.Item key={'location_wc4'}>WSCK 112 Bulman Rd Deep Well</Menu.Item>
+                            <Menu.Item key={'location_wc5'}>MFCK mid North End Rd. Deep well</Menu.Item>
+                            <Menu.Item key={'location_wc6'}>FLCK mid Kitchen Rd Deep Well</Menu.Item>
+                            <Menu.Item key={'location_wc7'}>FLCK 177 Dukes Road Deep Well </Menu.Item>
+                            <Menu.Item key={'location_wc8'}>FLCK Streamsong House Well</Menu.Item>
+                            <Menu.Item key={'location_wc9'}>WFLCK 129 Burgoyne Bay Rd. Shallow Well</Menu.Item>
+
+                        </SubMenu>
+
+                        <SubMenu title={<span><AreaChartOutlined/><span>South</span></span>}>
+                            <Menu.Item key={'location_ws1'}>RUAL 971 Isabella Pt Rd well</Menu.Item>
+                            <Menu.Item key={'location_ws2'}>RUAL Roland Rd Shallow Well</Menu.Item>
+
                         </SubMenu>
 
                     </SubMenu>
                 </Menu>
+
             </div>
         )
     }
