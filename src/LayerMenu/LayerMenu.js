@@ -857,7 +857,7 @@ class LayerMenu extends Component {
                     label: 'RUAL Lumley Rd Shallow Well',
                     latitude: '48.7366',
                     longitude: '-123.447766',
-                    radius: 75
+                    radius: 50
                 }
                 break;
 
