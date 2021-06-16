@@ -731,16 +731,6 @@ class LayerMenu extends Component {
                 }
                 break;
 
-            case 'location_wn3':
-                location = {
-                    area: 'NORTH',
-                    label: 'SHCK mid Booth Canal Rd Shallow Well',
-                    latitude: '48.85970',
-                    longitude: '-123.53039',
-                    radius: 50
-                }
-                break;
-
             case 'location_wc1':
                 location = {
                     area: 'CENTRAL',
@@ -831,6 +821,16 @@ class LayerMenu extends Component {
                 }
                 break;
 
+            case 'location_wc10':
+                location = {
+                    area: 'NORTH',
+                    label: 'SHCK mid Booth Canal Rd Shallow Well',
+                    latitude: '48.85970',
+                    longitude: '-123.53039',
+                    radius: 50
+                }
+                break;
+
             case 'location_ws1':
                 location = {
                     area: 'SOUTH',
@@ -850,6 +850,17 @@ class LayerMenu extends Component {
                     radius: 50
                 }
                 break;
+
+            case 'location_ws3':
+                location = {
+                    area: 'SOUTH',
+                    label: 'RUAL Lumley Rd Shallow Well',
+                    latitude: '48.7366',
+                    longitude: '-123.447766',
+                    radius: 75
+                }
+                break;
+
         }
 
         this.setState({selectLocation: e.key})
@@ -1080,7 +1091,6 @@ class LayerMenu extends Component {
                         <SubMenu title={<span><AreaChartOutlined/><span>North</span></span>}>
                             <Menu.Item key={'location_wn1'}>WLBK inland Walkers Hook Rd Deep Well 1</Menu.Item>
                             <Menu.Item key={'location_wn2'}>MFCK mid North End Rd. Deep well</Menu.Item>
-                            <Menu.Item key={'location_wn3'}>SHCK mid Booth Canal Rd Shallow Well</Menu.Item>
 
                         </SubMenu>
 
@@ -1093,13 +1103,15 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location_wc6'}>FLCK mid Kitchen Rd Deep Well</Menu.Item>
                             <Menu.Item key={'location_wc7'}>FLCK 177 Dukes Road Deep Well </Menu.Item>
                             <Menu.Item key={'location_wc8'}>FLCK Streamsong House Well</Menu.Item>
-                            <Menu.Item key={'location_wc9'}>WFLCK 129 Burgoyne Bay Rd. Shallow Well</Menu.Item>
+                            <Menu.Item key={'location_wc9'}>FLCK 129 Burgoyne Bay Rd. Shallow Well</Menu.Item>
+                            <Menu.Item key={'location_wc10'}>SHCK mid Booth Canal Rd Shallow Well</Menu.Item>
 
                         </SubMenu>
 
                         <SubMenu title={<span><AreaChartOutlined/><span>South</span></span>}>
                             <Menu.Item key={'location_ws1'}>RUAL 971 Isabella Pt Rd well</Menu.Item>
                             <Menu.Item key={'location_ws2'}>RUAL Roland Rd Shallow Well</Menu.Item>
+                            <Menu.Item key={'location_ws3'}>RUAL Lumley Rd Shallow Well</Menu.Item>
 
                         </SubMenu>
 
