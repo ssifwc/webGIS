@@ -529,10 +529,10 @@ class LayerMenu extends Component {
             case 'location55':
                 location = {
                     area: 'SOUTH',
-                    label: 'RUAL 971 Isabella Pt Rd well',
-                    latitude: '48.737939',
-                    longitude: '-123.436593',
-                    radius: 100
+                    label: 'RUAL Lumley Ck',
+                    latitude: '48.731345',
+                    longitude: '-123.439287',
+                    radius: 750
                 }
                 break;
             case 'location56':
@@ -708,6 +708,7 @@ class LayerMenu extends Component {
                 break;
 
 
+
             //Starting Well charts here
             //wn = 'wells north' --> this way it is easier to reorder certain submenu's (for now at least..).
 
@@ -823,10 +824,19 @@ class LayerMenu extends Component {
 
             case 'location_wc10':
                 location = {
-                    area: 'NORTH',
+                    area: 'CENTRAL',
                     label: 'SHCK mid Booth Canal Rd Shallow Well',
                     latitude: '48.85970',
                     longitude: '-123.53039',
+                    radius: 50
+                }
+                break;
+            case 'location_wc11':
+                location = {
+                    area: 'CENTRAL',
+                    label: '8344 mid Rainbow Rd Deep Well',
+                    latitude: '48.864228',
+                    longitude: '-123.542523',
                     radius: 50
                 }
                 break;
@@ -998,7 +1008,6 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location34'}>2017 Madrona Ck Nicks Pond</Menu.Item>
                             <Menu.Item key={'location35'}>2017 Madrona Ck Churchill Trail</Menu.Item>
                             <Menu.Item key={'location25'}>BLCK Bullock Ck Eagle Ridge Rd</Menu.Item>
-
                             <Menu.Item key={'location24'}>MKCK McFadden Ck at RW CMP</Menu.Item>
                             <Menu.Item key={'location27'}>MNCK above wetlands</Menu.Item>
                             <Menu.Item key={'location26'}>MNCK CMP at Robinson Rd</Menu.Item>
@@ -1056,7 +1065,7 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location41'}>RUAL Ruby Alton Ck outfall</Menu.Item>
                             <Menu.Item key={'location53'}>RUAL 971 Isabella Pt Rd CMP</Menu.Item>
                             <Menu.Item key={'location54'}>RUAL Holmes Ck</Menu.Item>
-                            <Menu.Item key={'location55'}>RUAL 971 Isabella Pt Rd well</Menu.Item>
+                            <Menu.Item key={'location55'}>RUAL Lumley Ck</Menu.Item>
                             <Menu.Item key={'location52'}>SLCK Soule Ck aka Fulford Ck spur</Menu.Item>
                             <Menu.Item key={'location64'}>TRCK Mill Farm Ephemeral Creek 2</Menu.Item>
                             <Menu.Item key={'location65'}>TRCK Mill Farm Tau Hang Creek area ephemeral creek 1</Menu.Item>
@@ -1105,6 +1114,7 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location_wc8'}>FLCK Streamsong House Well</Menu.Item>
                             <Menu.Item key={'location_wc9'}>FLCK 129 Burgoyne Bay Rd. Shallow Well</Menu.Item>
                             <Menu.Item key={'location_wc10'}>SHCK mid Booth Canal Rd Shallow Well</Menu.Item>
+                            <Menu.Item key={'location_wc11'}>8344 mid Rainbow Rd Deep Well</Menu.Item>
 
                         </SubMenu>
 
