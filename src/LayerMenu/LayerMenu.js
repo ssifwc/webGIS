@@ -775,9 +775,9 @@ class LayerMenu extends Component {
             case 'location_wc5':
                 location = {
                     area: 'CENTRAL',
-                    label: 'MFCK mid North End Rd. Deep well',
-                    latitude: '48.919616',
-                    longitude: '-123.560023',
+                    label: 'MYCK Beaver Pt Rd Hall Deep Well',
+                    latitude: '48.770438',
+                    longitude: '-123.404638',
                     radius: 50
                 }
                 break;
@@ -840,6 +840,14 @@ class LayerMenu extends Component {
                     radius: 50
                 }
                 break;
+            case 'location_wc12':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK end Garner Rd Deep Well',
+                    latitude: '48.812601',
+                    longitude: '-123.496885',
+                    radius: 50
+                }
 
             case 'location_ws1':
                 location = {
@@ -1108,13 +1116,15 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location_wc2'}>WSCK Meyer Road Dug Well</Menu.Item>
                             <Menu.Item key={'location_wc3'}>WSCK 104 Bulman Rd Deep Well</Menu.Item>
                             <Menu.Item key={'location_wc4'}>WSCK 112 Bulman Rd Deep Well</Menu.Item>
-                            <Menu.Item key={'location_wc5'}>MFCK mid North End Rd. Deep well</Menu.Item>
+                            <Menu.Item key={'location_wc5'}>MYCK Beaver Pt Rd Hall Deep Well</Menu.Item>
                             <Menu.Item key={'location_wc6'}>FLCK mid Kitchen Rd Deep Well</Menu.Item>
                             <Menu.Item key={'location_wc7'}>FLCK 177 Dukes Road Deep Well </Menu.Item>
                             <Menu.Item key={'location_wc8'}>FLCK Streamsong House Well</Menu.Item>
                             <Menu.Item key={'location_wc9'}>FLCK 129 Burgoyne Bay Rd. Shallow Well</Menu.Item>
                             <Menu.Item key={'location_wc10'}>SHCK mid Booth Canal Rd Shallow Well</Menu.Item>
                             <Menu.Item key={'location_wc11'}>8344 mid Rainbow Rd Deep Well</Menu.Item>
+                            <Menu.Item key={'location_wc12'}>FLCK end Garner Rd Deep Well</Menu.Item>
+
 
                         </SubMenu>
 
