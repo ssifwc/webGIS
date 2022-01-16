@@ -843,11 +843,12 @@ class LayerMenu extends Component {
             case 'location_wc12':
                 location = {
                     area: 'CENTRAL',
-                    label: 'FLCK end Garner Rd Deep Well',
+                    label: 'FLCK end Garner Rd Deep well',
                     latitude: '48.812601',
                     longitude: '-123.496885',
                     radius: 50
                 }
+                break;
 
             case 'location_ws1':
                 location = {
@@ -858,7 +859,6 @@ class LayerMenu extends Component {
                     radius: 50
                 }
                 break;
-
             case 'location_ws2':
                 location = {
                     area: 'SOUTH',
@@ -1123,8 +1123,7 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location_wc9'}>FLCK 129 Burgoyne Bay Rd. Shallow Well</Menu.Item>
                             <Menu.Item key={'location_wc10'}>SHCK mid Booth Canal Rd Shallow Well</Menu.Item>
                             <Menu.Item key={'location_wc11'}>8344 mid Rainbow Rd Deep Well</Menu.Item>
-                            <Menu.Item key={'location_wc12'}>FLCK end Garner Rd Deep Well</Menu.Item>
-
+                            <Menu.Item key={'location_wc12'}>FLCK end Garner Rd Deep well</Menu.Item>
 
                         </SubMenu>
 
