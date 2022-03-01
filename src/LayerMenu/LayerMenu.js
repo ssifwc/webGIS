@@ -567,7 +567,7 @@ class LayerMenu extends Component {
                     area: 'SOUTH',
                     label: '2112 N Canyon Ck 100m U/S Mt Rd',
                     latitude: '48.736127',
-                    longitude: '123.455508',
+                    longitude: '-123.455508',
                     radius: 75
                 }
                 break;
