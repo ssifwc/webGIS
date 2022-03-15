@@ -706,6 +706,51 @@ class LayerMenu extends Component {
                     radius: 10
                 }
                 break;
+            case 'location74':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'GGCK Ganges Ck McPhilips Av N',
+                    latitude: '48.852527',
+                    longitude: '-123.50294',
+                    radius: 75
+                }
+                break;
+            case 'location75':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'GGCK Ganges Ck u/s CMP Drake Rd',
+                    latitude: '48.850861',
+                    longitude: '-123.50923',
+                    radius: 75
+                }
+                break;
+            case 'location76':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'GGCK Swanson Ck Hereford Mdw',
+                    latitude: '48.853057',
+                    longitude: '-123.50106',
+                    radius: 75
+                }
+                break;
+            case 'location77':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK Ford Lk inflw NW3 Ck u/s NW spur',
+                    latitude: '48.814997',
+                    longitude: '-123.49812',
+                    radius: 75
+                }
+                break;
+            case 'location78':
+                location = {
+                    area: 'CENTRAL',
+                    label: 'FLCK Ford Lk inflw NW2 Ck u/s NW spur',
+                    latitude: '48.814685',
+                    longitude: '-123.49832',
+                    radius: 75
+                }
+                break;
 
 
 
@@ -1055,6 +1100,11 @@ class LayerMenu extends Component {
                             <Menu.Item key={'location71'}>FLCK Ford Lk Outfall u/s CMP</Menu.Item>
                             <Menu.Item key={'location44'}>XWQW Site 1 bridge Ck XWP</Menu.Item>
                             <Menu.Item key={'location49'}>9075 Bridge Ck pt III d/s main Barn trail CMP</Menu.Item>
+                            <Menu.Item key={'location74'}>GGCK Ganges Ck McPhilips Av N</Menu.Item>
+                            <Menu.Item key={'location75'}>GGCK Ganges Ck u/s CMP Drake Rd</Menu.Item>
+                            <Menu.Item key={'location76'}>GGCK Swanson Ck Hereford Mdw</Menu.Item>
+                            <Menu.Item key={'location77'}>FLCK Ford Lk inflw NW3 Ck u/s NW spur</Menu.Item>
+                            <Menu.Item key={'location78'}>FLCK Ford Lk inflw NW2 Ck u/s NW spur</Menu.Item>
                         </SubMenu>
 
                         <SubMenu title={<span><AreaChartOutlined/><span>South</span></span>}>
